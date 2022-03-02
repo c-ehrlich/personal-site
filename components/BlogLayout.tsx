@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ReactChild } from 'react';
 import { BlogFrontMatter } from '../types';
 
@@ -10,6 +11,9 @@ const BlogLayout = ({
 }) => {
   return (
     <>
+      <Link href='/blog'>
+        <a>{`<< back`}</a>
+      </Link>
       <div>{frontMatter.title}</div>
       {children}
     </>
