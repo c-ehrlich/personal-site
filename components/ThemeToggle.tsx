@@ -25,6 +25,7 @@ const ThemeToggle = () => {
         <StyledDayModeButton
           onClick={toggleTheme}
           color={lightTheme.text}
+          title='Toggle Light Mode'
           height='36px'
           width='36px'
         />
@@ -32,6 +33,7 @@ const ThemeToggle = () => {
         <StyledNightModeButton
           onClick={toggleTheme}
           color={darkTheme.text}
+          title='Toggle Dark Mode'
           height='36px'
           width='36px'
         />
