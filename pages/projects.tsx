@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
+import PageSectionContainer from '../components/PageSectionContainer';
 
 const projects: NextPage = () => {
   return (
-    <div>projects page</div>
+    <PageSectionContainer>projects page</PageSectionContainer>
   )
 }
 

@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
+import PageSectionContainer from '../components/PageSectionContainer';
 
 const contact: NextPage = () => {
   return (
-    <div>contact page</div>
+    <PageSectionContainer>contact page</PageSectionContainer>
   )
 }
 
