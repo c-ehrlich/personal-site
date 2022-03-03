@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { ThemeType } from './Theme';
 
 export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
+
   html, body {
   padding: 0;
   margin: 0;
@@ -18,6 +19,14 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   a {
     color: ${({ theme }) => theme.link};
     text-decoration: underline;
+  }
+  a:visited {
+    color: ${({ theme }) => theme.link};
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.4;
   }
 
   * {
