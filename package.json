@@ -23,8 +23,10 @@
     "@types/react": "17.0.39",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@types/styled-components": "^5.1.24",
+    "babel-plugin-styled-components": "^2.0.6",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
-    "typescript": "4.6.2"
+    "typescript": "4.6.2",
+    "typescript-plugin-styled-components": "^2.0.0"
   }
 }

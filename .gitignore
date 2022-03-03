@@ -3,6 +3,12 @@
 # custom
 TODO.md
 
+.babelrc
+
+####################################
+# unchanged stock .gitignore below #
+####################################
+
 # dependencies
 /node_modules
 /.pnp
