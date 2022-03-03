@@ -1,4 +1,8 @@
 import create from 'zustand';
+import {
+  getLocalStorageOrDefault,
+  setLocalStorage,
+} from './localStorageHelpers';
 
 interface AppState {
   theme: string;
@@ -6,12 +10,13 @@ interface AppState {
 }
 
 const useStore = create<AppState>((set) => ({
-  theme: 'light',
+  theme: getLocalStorageOrDefault('theme', 'light'),
   toggleTheme: () => {
     set((state) => ({
       ...state,
       theme: state.theme === 'light' ? 'dark' : 'light',
     }));
+    setLocalStorage('theme', getLocalStorageOrDefault('theme', 'light') === 'light' ? 'dark' : 'light');
   },
 }));
 
