@@ -1,4 +1,3 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,15 +5,8 @@ import { AnimateSharedLayout } from 'framer-motion';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
-import { useState } from 'react';
 import useStore, { Theme } from '../util/store';
 import ThemeToggle from '../components/ThemeToggle';
-
-const SpacedFlexRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme, toggleTheme } = useStore();
@@ -28,32 +20,32 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div>
               <header>
                 <SpacedFlexRow>
-                  <div>asd</div>
+                  <Avatar
+                    src='/img/avatar.jpg'
+                    alt='Christopher Ehrlich face'
+                    width={128}
+                    height={128}
+                  />
                   <ThemeToggle />
                 </SpacedFlexRow>
-                <Avatar
-                  src='/img/avatar.jpg'
-                  alt='Christopher Ehrlich face'
-                  width={128}
-                  height={128}
-                />
-                <h1>Hi, I'm Christopher.</h1>
-                <div>
-                  <Link href='/'>
-                    <a>Home</a>
+
+                <h1>Hi, I&apos;m Christopher.</h1>
+                <NavLinks>
+                  <Link href='/' passHref>
+                    <NavLink>Home</NavLink>
                   </Link>
-                  <Link href='/blog'>
-                    <a>Blog</a>
+                  <Link href='/blog' passHref>
+                    <NavLink>Blog</NavLink>
                   </Link>
-                  <Link href='/projects'>
-                    <a>Projects</a>
+                  <Link href='/projects' passHref>
+                    <NavLink>Projects</NavLink>
                   </Link>
-                  <Link href='/contact'>
-                    <a>Contact</a>
+                  <Link href='/contact' passHref>
+                    <NavLink>Contact</NavLink>
                   </Link>
-                </div>
+                </NavLinks>
               </header>
-                  <Component {...pageProps} />
+              <Component {...pageProps} />
             </div>
 
             <Footer>
@@ -69,12 +61,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-const ContainerOuter = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding-bottom: 16px;
+const Avatar = styled(Image)`
+  border-radius: 50%;
 `;
 
 const ContainerInner = styled.div`
@@ -84,7 +72,14 @@ const ContainerInner = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 960px;
-  padding: 16px;
+  padding: 32px 16px 16px 16px;
+`;
+
+const ContainerOuter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 `;
 
 const Footer = styled.div`
@@ -92,8 +87,24 @@ const Footer = styled.div`
   text-align: center;
 `;
 
-const Avatar = styled(Image)`
-  border-radius: 50%;
+const NavLinks = styled.nav`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+`;
+
+const NavLink = styled.a`
+  font-size: 20px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const SpacedFlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export default MyApp;
