@@ -1,11 +1,17 @@
 import Link from 'next/link'
 import { BlogPostsProps } from '../types'
+import styled from "styled-components";
+
+const UnstyledList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
 
 const BlogPosts = ({ posts }: BlogPostsProps) => {
   return (
     <div className="posts">
       {!posts && <div>No posts!</div>}
-      <ul>
+      <UnstyledList>
         {posts &&
           posts
             .sort(
@@ -19,11 +25,11 @@ const BlogPosts = ({ posts }: BlogPostsProps) => {
                     <a>{post.frontMatter.title}</a>
                   </Link>{' '}
                   - {post.frontMatter.description}
-                  <p>[ {post.frontMatter.tags.join(', ')} ]</p>
+                  <p>{post.frontMatter.tags.map(tag => '#'.concat(tag)).join(', ')}</p>
                 </article>
               )
             })}
-      </ul>
+      </UnstyledList>
     </div>
   )
 }
