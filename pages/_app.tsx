@@ -7,26 +7,37 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
 import { useState } from 'react';
-import useStore from '../util/store';
+import useStore, { Theme } from '../util/store';
+import ThemeToggle from '../components/ThemeToggle';
+
+const SpacedFlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme, toggleTheme } = useStore();
 
   return (
     <AnimateSharedLayout>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles theme={theme === 'light' ? lightTheme : darkTheme} />
+      <ThemeProvider theme={theme === Theme.light ? lightTheme : darkTheme}>
+        <GlobalStyles theme={theme === Theme.light ? lightTheme : darkTheme} />
         <ContainerOuter>
           <ContainerInner>
             <div>
               <header>
-                <h1>Christopher Ehrlich</h1>
+                <SpacedFlexRow>
+                  <div>asd</div>
+                  <ThemeToggle />
+                </SpacedFlexRow>
                 <Avatar
                   src='/img/avatar.jpg'
                   alt='Christopher Ehrlich face'
-                  width={200}
-                  height={200}
+                  width={128}
+                  height={128}
                 />
+                <h1>Hi, I'm Christopher.</h1>
                 <div>
                   <Link href='/'>
                     <a>Home</a>
@@ -41,9 +52,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <a>Contact</a>
                   </Link>
                 </div>
-                <button onClick={toggleTheme}>Switch Theme</button>
               </header>
-              <Component {...pageProps} />
+                  <Component {...pageProps} />
             </div>
 
             <Footer>

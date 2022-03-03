@@ -4,19 +4,30 @@ import {
   setLocalStorage,
 } from './localStorageHelpers';
 
+export enum Theme {
+  light = 'lightTheme',
+  dark = 'darkTheme',
+}
+
 interface AppState {
-  theme: string;
+  theme: Theme;
   toggleTheme: () => void;
 }
 
 const useStore = create<AppState>((set) => ({
-  theme: getLocalStorageOrDefault('theme', 'light'),
+  theme: getLocalStorageOrDefault<Theme>('theme', Theme.light),
   toggleTheme: () => {
     set((state) => ({
       ...state,
-      theme: state.theme === 'light' ? 'dark' : 'light',
+      theme: state.theme === Theme.light ? Theme.dark : Theme.light,
     }));
-    setLocalStorage('theme', getLocalStorageOrDefault('theme', 'light') === 'light' ? 'dark' : 'light');
+    console.log(getLocalStorageOrDefault('theme', 'hi'));
+    setLocalStorage(
+      'theme',
+      getLocalStorageOrDefault('theme', Theme.light) === Theme.light
+        ? Theme.dark
+        : Theme.light
+    );
   },
 }));
 
