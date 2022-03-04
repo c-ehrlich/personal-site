@@ -5,11 +5,9 @@ export type BlogFrontMatter = {
   tags: string[];
 };
 
-export type BlogLayoutProps = {
-  children: React.ReactNode;
+export type BlogPostsListItem = {
   frontMatter: BlogFrontMatter;
-  wordCount: number;
-  readingTime: string;
+  slug: string;
 };
 
 export type BlogPostProps = {
@@ -20,17 +18,3 @@ export type BlogPostProps = {
   wordCount: number;
   readingTime: string;
 };
-
-export type BlogPostsListItem = {
-  frontMatter: BlogFrontMatter;
-  slug: string;
-}
-
-export type BlogPostsProps = {
-  posts?: BlogPostProps[];
-};
-
-export interface BlogProps extends BlogPostsProps {
-  title: string;
-  description: string;
-}
