@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Params } from 'next/dist/server/router';
-import { BlogFrontMatter, BlogPostsListProps } from '../types';
+import { BlogPostsListItem } from '../types';
 
 const root = process.cwd();
 
@@ -56,7 +56,7 @@ export async function getAllPostsWithTag(
 
 export async function getAllPostsWithFrontMatter(
   dataType: string
-): Promise<BlogPostsListProps> {
+): Promise<BlogPostsListItem[]> {
   const files = fs.readdirSync(path.join(root, 'data', dataType));
 
   // @ts-ignore FIXME do this in a cleaner way
