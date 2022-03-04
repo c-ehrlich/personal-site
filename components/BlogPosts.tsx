@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { BlogPostsListItem } from '../types';
 import { UnstyledList } from '../styles/UnstyledList';
+import React from 'react';
+import BlogTags from './BlogTags';
 
 type Props = {
   posts: BlogPostsListItem[];
@@ -25,11 +27,7 @@ const BlogPosts = (props: Props) => {
                     <a>{post.frontMatter.title}</a>
                   </Link>{' '}
                   - {post.frontMatter.description}
-                  <p>
-                    {post.frontMatter.tags
-                      .map((tag) => '#'.concat(tag))
-                      .join(', ')}
-                  </p>
+                  <BlogTags tags={post.frontMatter.tags} />
                 </article>
               );
             })}
@@ -37,5 +35,7 @@ const BlogPosts = (props: Props) => {
     </div>
   );
 };
+
+
 
 export default BlogPosts;
