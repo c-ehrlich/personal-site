@@ -7,14 +7,14 @@ const BlogLayout = ({
   children,
 }: {
   frontMatter: BlogFrontMatter;
-  children: ReactChild;
+  children: ReactChild[];
 }) => {
   return (
     <>
       <Link href='/blog'>
         <a>{`<< back`}</a>
       </Link>
-      <div>{frontMatter.title}</div>
+      <h2>{frontMatter.title}</h2>
       {children}
     </>
   );

@@ -9,12 +9,15 @@ import { BlogPostProps } from '../../types';
 import { getFiles, getPostBySlug } from '../../lib/utils';
 import React from 'react';
 import { Params } from 'next/dist/server/router';
+import BlogTags from '../../components/BlogTags';
 
 const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
   if (!frontMatter) return <></>;
 
   return (
     <BlogLayout frontMatter={frontMatter}>
+      <div>Posted {frontMatter.publishedDate}</div>
+      <BlogTags tags={frontMatter.tags} />
       <ReactMarkdown 
         children={markdownBody}
         components={{
