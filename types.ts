@@ -21,6 +21,11 @@ export type BlogPostProps = {
   readingTime: string;
 };
 
+export type BlogPostsListProps = {
+  frontMatter: BlogFrontMatter;
+  slug: string;
+}[];
+
 export type BlogPostsProps = {
   posts?: BlogPostProps[];
 };
