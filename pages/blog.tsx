@@ -1,10 +1,10 @@
 import BlogPosts from '../components/BlogPosts';
 import { getAllPostsWithFrontMatter } from '../lib/utils';
-import { BlogProps } from '../types';
+import { BlogPostsListItem } from '../types';
 
 import PageSectionContainer from '../components/PageSectionContainer';
 
-export default function Blog({ posts, title, description }: BlogProps) {
+const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
   return (
     <PageSectionContainer>
       <section className='blog-posts'>
@@ -25,7 +25,7 @@ export default function Blog({ posts, title, description }: BlogProps) {
       </section>
     </PageSectionContainer>
   );
-}
+};
 
 export async function getStaticProps() {
   const posts = await getAllPostsWithFrontMatter('blog');
@@ -38,3 +38,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Blog;

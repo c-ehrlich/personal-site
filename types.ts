@@ -21,10 +21,10 @@ export type BlogPostProps = {
   readingTime: string;
 };
 
-export type BlogPostsListProps = {
+export type BlogPostsListItem = {
   frontMatter: BlogFrontMatter;
   slug: string;
-}[];
+}
 
 export type BlogPostsProps = {
   posts?: BlogPostProps[];
