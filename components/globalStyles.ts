@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
   }
 
   body {
@@ -25,8 +27,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   }
 
   p {
-    font-size: 20px;
-    line-height: 1.4;
   }
 
   * {
