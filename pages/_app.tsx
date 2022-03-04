@@ -5,7 +5,7 @@ import { AnimateSharedLayout } from 'framer-motion';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
-import useStore, { Theme } from '../util/store';
+import useStore, { Theme } from '../lib/store';
 import ThemeToggle from '../components/ThemeToggle';
 
 function MyApp({ Component, pageProps }: AppProps) {

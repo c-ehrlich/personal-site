@@ -1,5 +1,5 @@
 import React from 'react';
-import useStore, { Theme } from '../util/store';
+import useStore, { Theme } from '../lib/store';
 import { SunnyOutline, MoonOutline } from 'react-ionicons';
 import styled, { css } from 'styled-components';
 import { darkTheme, lightTheme } from './Theme';
