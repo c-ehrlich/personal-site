@@ -95,6 +95,10 @@ const ContainerOuter = styled.div`
 const Footer = styled.div`
   width: 100%;
   text-align: center;
+  margin-top: 32px;
+  font-family: 'Roboto Condensed';
+  font-weight: 300px;
+  font-size: 16px;
 `;
 
 const NavLinks = styled.nav`
