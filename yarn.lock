@@ -173,6 +173,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/noto-serif@^4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.5.4.tgz#49d4e53b3d8da82b193f3c9b042344bdd77eed06"
+  integrity sha512-L4mRr2ZXJLYtaQ35QUSDa1KBXk2xjtWXcmyj6uVVvElju/uhWpSDM+QWJZImvF3W2Sal1j/q6XpOaOEwpDTjHw==
+
+"@fontsource/roboto-condensed@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto-condensed/-/roboto-condensed-4.5.3.tgz#6ed69f566f15729e76bf85df89371b0e21593d7c"
+  integrity sha512-gxUhy1ia9F0HSBcfvfKvmJ1+INbYALOCZVK8L6qAYRPT3Qhy8S9vfR3Ycz5kCniBZtArCVTlFgzB31UKhOMZLg==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
