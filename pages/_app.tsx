@@ -7,12 +7,17 @@ import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
 import useStore, { Theme } from '../lib/store';
 import ThemeToggle from '../components/ThemeToggle';
+import '@fontsource/roboto-condensed/300.css';
+import '@fontsource/roboto-condensed/700.css';
+import '@fontsource/noto-serif/400.css';
+import '@fontsource/noto-serif/700.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { theme, toggleTheme } = useStore();
+  const { theme } = useStore();
 
   return (
     <AnimateSharedLayout>
+      {/* FIXME: do both of these components need the theme? */}
       <ThemeProvider theme={theme === Theme.light ? lightTheme : darkTheme}>
         <GlobalStyles theme={theme === Theme.light ? lightTheme : darkTheme} />
         <ContainerOuter>
@@ -29,19 +34,19 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <ThemeToggle />
                 </SpacedFlexRow>
 
-                <h1>Hi, I&apos;m Christopher.</h1>
+                <HelloText>Hi, I&apos;m Christopher.</HelloText>
                 <NavLinks>
                   <Link href='/' passHref>
-                    <NavLink>Home</NavLink>
+                    <NavLink>HOME</NavLink>
                   </Link>
                   <Link href='/blog' passHref>
-                    <NavLink>Blog</NavLink>
+                    <NavLink>BLOG</NavLink>
                   </Link>
                   <Link href='/projects' passHref>
-                    <NavLink>Projects</NavLink>
+                    <NavLink>PROJECTS</NavLink>
                   </Link>
                   <Link href='/contact' passHref>
-                    <NavLink>Contact</NavLink>
+                    <NavLink>CONTACT</NavLink>
                   </Link>
                 </NavLinks>
               </header>
@@ -63,6 +68,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 const Avatar = styled(Image)`
   border-radius: 50%;
+`;
+
+const HelloText = styled.h1`
+  font-family: 'Noto Serif';
+  font-weight: 700;
 `;
 
 const ContainerInner = styled.div`
@@ -94,11 +104,10 @@ const NavLinks = styled.nav`
 `;
 
 const NavLink = styled.a`
-  font-size: 20px;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  // FIXME get text-transform: capitalize working so we don't have to
+  // hardcode the text as uppercase
 `
 
 const SpacedFlexRow = styled.div`
