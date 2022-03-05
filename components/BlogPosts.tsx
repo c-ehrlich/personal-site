@@ -27,7 +27,7 @@ const BlogPosts = (props: Props) => {
                     <a>{post.frontMatter.title}</a>
                   </Link>{' '}
                   - {post.frontMatter.description}
-                  <BlogTags tags={post.frontMatter.tags} />
+                  <BlogTags tags={post.frontMatter.tags} resource='blog' />
                 </article>
               );
             })}
