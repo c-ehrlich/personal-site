@@ -3,9 +3,11 @@ title: First Post
 description: My First Post
 publishedDate: 2021/02/14
 tags:
-  - hello world
-thumbnail: /img/project/project1thumb.jpg
+  - React
+  - Zustand
 image: /img/project/project1.jpg
+github: https://github.com/c-ehrlich/calculator
+deployed: https://c-ehrlich.github.io/calculator
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare ante nisi, eu imperdiet tortor tincidunt quis. Integer eu auctor lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam rutrum tristique mollis. Suspendisse vestibulum tortor cursus nisl tristique, efficitur eleifend nulla malesuada. Praesent ac arcu sed urna facilisis varius. Maecenas quis mi at enim vestibulum viverra in ut turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque nisl nunc, pulvinar at ex et, tempus scelerisque lacus. Duis bibendum euismod diam a fringilla. Duis scelerisque arcu eget arcu gravida tristique. In at metus et justo hendrerit dignissim at id ex.
 
