@@ -3,6 +3,9 @@ export type BlogFrontMatter = {
   description: string;
   publishedDate: string;
   tags: string[];
+  image?: string;
+  github?: string;
+  deployed?: string;
 };
 
 export type BlogPostsListItem = {
