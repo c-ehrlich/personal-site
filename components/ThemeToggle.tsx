@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useStore, { Theme } from '../lib/store';
-import { SunnyOutline, MoonOutline } from 'react-ionicons';
+import { SunnyOutline, MoonOutline, Moon } from 'react-ionicons';
 import styled, { css } from 'styled-components';
 import { darkTheme, lightTheme } from './Theme';
 
@@ -8,21 +8,30 @@ const IoniconButton = css`
   cursor: pointer;
 `;
 
-const StyledDayModeButton = styled(SunnyOutline)`
-  ${IoniconButton}
-`;
+// const StyledDayModeButton = styled(SunnyOutline)`
+//   ${IoniconButton}
+// `;
 
-const StyledNightModeButton = styled(MoonOutline)`
-  ${IoniconButton}
-`
+// const StyledNightModeButton = styled(MoonOutline)`
+//   ${IoniconButton}
+// `
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useStore();
 
-  return (
+  // The theme preference is saved in localstorage which we don't have during
+  // SSR, so we wait until useEffect (which runs client side) to display
+  // anything that depends on localStorage to avoid rehydration errors
+  const [isClientSide, setIsClientside] = useState<boolean>(false);
+  useEffect(() => {
+    setIsClientside(true);
+  }, []);
+
+  return isClientSide ? (
     <>
       {theme === Theme.light ? (
-        <StyledDayModeButton
+        // <StyledDayModeButton
+        <SunnyOutline
           onClick={toggleTheme}
           color={lightTheme.text}
           title='Toggle Light Mode'
@@ -30,7 +39,8 @@ const ThemeToggle = () => {
           width='36px'
         />
       ) : (
-        <StyledNightModeButton
+        // <StyledNightModeButton
+        <MoonOutline
           onClick={toggleTheme}
           color={darkTheme.text}
           title='Toggle Dark Mode'
@@ -39,6 +49,8 @@ const ThemeToggle = () => {
         />
       )}
     </>
+  ) : (
+    <></>
   );
 };
 
