@@ -23,8 +23,12 @@ Text *e1* **e2**
   * List 2 b
 * List 3
 
-```js
-console.log("hello");
+```diff
+@@ -4,6 +4,5 @@
+-    let foo = bar.baz([1, 2, 3]);
+-    foo = foo + 1;
++    const foo = bar.baz([1, 2, 3]) + 1;
+     console.log(`foo: ${foo}`);
 ```
 
 ```
