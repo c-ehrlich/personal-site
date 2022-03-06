@@ -3,6 +3,7 @@ import { BlogPostsListItem } from '../types';
 import { UnstyledList } from '../styles/UnstyledList';
 import React from 'react';
 import BlogTags from './BlogTags';
+import styled from 'styled-components';
 
 type Props = {
   posts: BlogPostsListItem[];
@@ -10,9 +11,8 @@ type Props = {
 
 const BlogPosts = (props: Props) => {
   return (
-    <div className='posts'>
+    <BlogPostList className='posts'>
       {!props.posts && <div>No posts!</div>}
-      <UnstyledList>
         {props.posts &&
           props.posts
             .sort(
@@ -27,15 +27,18 @@ const BlogPosts = (props: Props) => {
                     <a>{post.frontMatter.title}</a>
                   </Link>{' '}
                   - {post.frontMatter.description}
-                  <BlogTags tags={post.frontMatter.tags} resource='blog' />
+                  <BlogTags hashtag={true} tags={post.frontMatter.tags} resource='blog' />
                 </article>
               );
             })}
-      </UnstyledList>
-    </div>
+    </BlogPostList>
   );
 };
 
-
+const BlogPostList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
 
 export default BlogPosts;

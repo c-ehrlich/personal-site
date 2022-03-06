@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const BlogTags = ({ tags, resource }: { tags: string[]; resource: string }) => {
+const BlogTags = ({ tags, resource, hashtag = false }: { tags: string[]; resource: string; hashtag?: boolean; }) => {
   return (
     <StyledBlogTags>
       {tags
         .map<React.ReactNode>((tag) => (
           <Link key={tag} href={`/${resource}/tag/${tag}`}>
-            <a>{tag.toUpperCase()}</a>
+            <a>{`${hashtag === true ? '#' : ''}${tag}`}</a>
           </Link>
         ))
         .reduce((prev, curr) => [prev, ' ', curr])}
