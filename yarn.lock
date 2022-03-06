@@ -178,6 +178,16 @@
   resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.5.4.tgz#49d4e53b3d8da82b193f3c9b042344bdd77eed06"
   integrity sha512-L4mRr2ZXJLYtaQ35QUSDa1KBXk2xjtWXcmyj6uVVvElju/uhWpSDM+QWJZImvF3W2Sal1j/q6XpOaOEwpDTjHw==
 
+"@fontsource/quicksand@^4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-4.5.4.tgz#9d8c7665f87eb394ed7f4609258f1246ba84533b"
+  integrity sha512-BJEmlSF+HH0JJK3ug3jT/Ov6TrX8gEIyuAHkBUI/0KuW/iCbO2M+bu7RX3RstlcQPKzTkIqZQ0IOeLO5zP5oag==
+
+"@fontsource/raleway@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/raleway/-/raleway-4.5.3.tgz#0a4477e037dbd9a4a26c1c9db3aa2bf93722b499"
+  integrity sha512-wJ8Rm8k5MuSnfERuL5Q1bd8Z80o3uWpC1vUmZAxcLXAY9IxnfGqZjZJ1Jd2lY1u5NaEo+zXCvHEViAIv6b1jEg==
+
 "@fontsource/roboto-condensed@^4.5.3":
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto-condensed/-/roboto-condensed-4.5.3.tgz#6ed69f566f15729e76bf85df89371b0e21593d7c"
