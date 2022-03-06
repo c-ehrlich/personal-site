@@ -37,16 +37,16 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <HelloText>Hi, I&apos;m Christopher.</HelloText>
                 <NavLinks>
                   <Link href='/' passHref>
-                    <NavLink>HOME</NavLink>
+                    <NavLink>Home</NavLink>
                   </Link>
                   <Link href='/projects' passHref>
-                    <NavLink>PROJECTS</NavLink>
+                    <NavLink>Projects</NavLink>
                   </Link>
                   <Link href='/blog' passHref>
-                    <NavLink>BLOG</NavLink>
+                    <NavLink>Blog</NavLink>
                   </Link>
                   <Link href='/contact' passHref>
-                    <NavLink>CONTACT</NavLink>
+                    <NavLink>Contact</NavLink>
                   </Link>
                 </NavLinks>
               </header>
@@ -110,8 +110,7 @@ const NavLinks = styled.nav`
 const NavLink = styled.a`
   font-family: 'Roboto Condensed';
   font-weight: 700;
-  // FIXME get text-transform: capitalize working so we don't have to
-  // hardcode the text as uppercase
+  text-transform: uppercase;
 `
 
 const SpacedFlexRow = styled.div`
