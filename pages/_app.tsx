@@ -39,11 +39,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <Link href='/' passHref>
                     <NavLink>HOME</NavLink>
                   </Link>
-                  <Link href='/blog' passHref>
-                    <NavLink>BLOG</NavLink>
-                  </Link>
                   <Link href='/projects' passHref>
                     <NavLink>PROJECTS</NavLink>
+                  </Link>
+                  <Link href='/blog' passHref>
+                    <NavLink>BLOG</NavLink>
                   </Link>
                   <Link href='/contact' passHref>
                     <NavLink>CONTACT</NavLink>
