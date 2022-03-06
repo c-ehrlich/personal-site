@@ -7,7 +7,7 @@ const StyledPageSectionContainer = styled(motion.div)`
   /* color: green; */
 `;
 
-const PageSectionContainer = ({ children }: { children: ReactChild }) => {
+const PageSectionContainer = ({ children }: { children: ReactChild | ReactChild[] }) => {
   return (
     <StyledPageSectionContainer
       initial={springInInitial}
