@@ -17,27 +17,28 @@ const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
   return (
     <BlogLayout frontMatter={frontMatter}>
       <div>Posted {frontMatter.publishedDate}</div>
-      <BlogTags tags={frontMatter.tags} />
-      <ReactMarkdown 
+      <BlogTags tags={frontMatter.tags} resource='blog' />
+      <ReactMarkdown
         children={markdownBody}
         components={{
-        code({node, inline, className, children, ...props}) {
-          const match = /language-(\w+)/.exec(className || '')
-          return !inline && match ? (
-            <SyntaxHighlighter
-              children={String(children).replace(/\n$/, '')}
-              style={vscDarkPlus}
-              language={match[1]}
-              PreTag="div"
-              {...props}
-            />
-          ) : (
-            <code className={className} {...props}>
-              {children}
-            </code>
-          )
-        }
-      }} />
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '');
+            return !inline && match ? (
+              <SyntaxHighlighter
+                children={String(children).replace(/\n$/, '')}
+                style={vscDarkPlus}
+                language={match[1]}
+                PreTag='div'
+                {...props}
+              />
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      />
     </BlogLayout>
   );
 };
