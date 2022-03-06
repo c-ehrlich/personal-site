@@ -53,13 +53,17 @@ const ProjectTechnologies = styled.p`
 
 const ProjectDescription = styled.p`
   margin: 0;
-  font-family: 'Roboto Condensed';
   font-size: 18px;
   font-weight: 300;
 `;
 
-const ProjectLinks = styled.ul`
+const ProjectLinks = styled.div`
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
 `;
 
 const Projects: FC<Props> = ({ projects }) => {
@@ -87,7 +91,7 @@ const Projects: FC<Props> = ({ projects }) => {
             <ProjectLinks>
               {project.frontMatter.github && (
                 <Link href={project.frontMatter.github}>
-                  <a>Source Code</a>
+                  <a>GitHub</a>
                 </Link>
               )}
               {project.frontMatter.deployed && (
