@@ -1,10 +1,20 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import PageSectionContainer from '../components/PageSectionContainer';
-import { LogoGithub, MailOpen } from 'react-ionicons';
 
 const contact: NextPage = () => {
   return (
-    <PageSectionContainer>contact page</PageSectionContainer>
+    <PageSectionContainer>
+      <h1>You can contact me at:</h1>
+      <ul>
+        <li>
+          <Link href='mailto://ehrlich.christopher@gmail.com'>Email</Link>
+        </li>
+        <li>
+          <Link href='https://github.com/c-ehrlich'><a>GitHub</a></Link>
+        </li>
+      </ul>
+    </PageSectionContainer>
   )
 }
 
