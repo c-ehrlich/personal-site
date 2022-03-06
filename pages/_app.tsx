@@ -9,8 +9,9 @@ import useStore, { Theme } from '../lib/store';
 import ThemeToggle from '../components/ThemeToggle';
 import '@fontsource/roboto-condensed/300.css';
 import '@fontsource/roboto-condensed/700.css';
-import '@fontsource/noto-serif/400.css';
 import '@fontsource/noto-serif/700.css';
+import '@fontsource/raleway/400.css';
+import '@fontsource/quicksand/700.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useStore();
