@@ -5,8 +5,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   html, body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Raleway, Helvetica Neue, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
     font-size: 20px;
     line-height: 1.4;
   }
@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   a {
     color: ${({ theme }) => theme.link};
     text-decoration: none;
+    border-color: ${({ theme }) => theme.link};
   }
   a:hover {
     text-decoration: underline;
@@ -27,8 +28,11 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   a:visited {
     color: ${({ theme }) => theme.link};
   }
-
-  p {
+  .bgglow {
+    transition: background-color 0.2s;
+  }
+  .bgglow:hover {
+    background-color: ${({ theme }) => theme.linkBg};
   }
 
   * {
