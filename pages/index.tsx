@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import PageSectionContainer from '../components/PageSectionContainer';
+import { generateRssFeed } from '../lib/rssUtils';
 
 const Home: NextPage = () => {
   return (
@@ -20,5 +21,11 @@ const Home: NextPage = () => {
     </PageSectionContainer>
   );
 };
+
+export const getStaticProps = async (_context) => {
+  await generateRssFeed();
+
+  return { props: {}};
+}
 
 export default Home;

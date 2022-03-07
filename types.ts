@@ -21,3 +21,10 @@ export type BlogPostProps = {
   wordCount: number;
   readingTime: string;
 };
+
+export type RSSBlogPost = {
+  source: string;
+  frontMatter: BlogFrontMatter;
+  content: any;
+  slug: string;
+}
