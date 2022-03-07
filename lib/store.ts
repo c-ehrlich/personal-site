@@ -21,7 +21,6 @@ const useStore = create<AppState>((set) => ({
       ...state,
       theme: state.theme === Theme.light ? Theme.dark : Theme.light,
     }));
-    console.log(getLocalStorageOrDefault('theme', 'hi'));
     setLocalStorage(
       'theme',
       getLocalStorageOrDefault('theme', Theme.light) === Theme.light
