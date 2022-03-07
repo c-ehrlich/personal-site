@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ContainerOuter>
           <ContainerInner>
             <div>
-              <header>
+              <StyledHeader>
                 <SpacedFlexRow>
                   <Avatar
                     src='/img/avatar.jpg'
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <NavLink>Contact</NavLink>
                   </Link>
                 </NavLinks>
-              </header>
+              </StyledHeader>
               <Component {...pageProps} />
             </div>
 
@@ -91,6 +91,10 @@ const ContainerOuter = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+`;
+
+const StyledHeader = styled.header`
+  margin-bottom: 16px;
 `;
 
 const Footer = styled.div`
