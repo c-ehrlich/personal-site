@@ -1,5 +1,5 @@
 import BlogPosts from '../components/BlogPosts';
-import { getAllPostsWithFrontMatter } from '../lib/utils';
+import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
 
 import PageSectionContainer from '../components/PageSectionContainer';

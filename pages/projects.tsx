@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import PageSectionContainer from '../components/PageSectionContainer';
 import Projects from '../components/Projects';
-import { getAllPostsWithFrontMatter } from '../lib/utils';
+import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
 
 const projects = ({ projects }: { projects: BlogPostsListItem[] }) => {
