@@ -22,10 +22,13 @@ const Home: NextPage = () => {
   );
 };
 
-export const getStaticProps = async (_context) => {
+/**
+ * Create the RSS feed on build 
+ */
+export const getStaticProps = async () => {
   await generateRssFeed();
 
-  return { props: {}};
+  return {};
 }
 
 export default Home;
