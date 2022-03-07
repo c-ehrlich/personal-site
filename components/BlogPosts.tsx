@@ -3,36 +3,13 @@ import { BlogPostsListItem } from '../types';
 import React from 'react';
 import BlogTags from './BlogTags';
 import styled from 'styled-components';
+import { getDate } from '../lib/utils';
 
 type Props = {
   posts: BlogPostsListItem[];
 };
 
 const BlogPosts = (props: Props) => {
-  const getDate = (date: string): string => {
-    console.log(date);
-    const [year, month, day] = date.split('/');
-    console.log(year, month, day);
-    const d = new Date(Number(year), Number(month), Number(day));
-    console.log(d);
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    const dateString = `${months[d.getMonth()-1]} ${day}, ${year}`;
-    return dateString;
-  };
-
   return (
     <BlogPostList className='posts'>
       {!props.posts && <div>No posts!</div>}
@@ -77,7 +54,7 @@ const BlogPostList = styled.div`
 `;
 
 const BlogTitle = styled.div`
-  font-size: 18pt;
+  font-size: 16pt;
 `;
 
 const BlogMainTitle = styled.span`
