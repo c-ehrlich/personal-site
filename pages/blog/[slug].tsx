@@ -6,18 +6,15 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 import BlogLayout from '../../components/BlogLayout';
 import { BlogPostProps } from '../../types';
-import { getFiles, getPostBySlug } from '../../lib/utils';
+import { getFiles, getPostBySlug } from '../../lib/blogUtils';
 import React from 'react';
 import { Params } from 'next/dist/server/router';
-import BlogTags from '../../components/BlogTags';
 
 const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
   if (!frontMatter) return <></>;
 
   return (
     <BlogLayout frontMatter={frontMatter}>
-      <div>Posted {frontMatter.publishedDate}</div>
-      <BlogTags tags={frontMatter.tags} resource='blog' />
       <ReactMarkdown
         children={markdownBody}
         components={{
