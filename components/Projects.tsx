@@ -64,6 +64,7 @@ const ProjectLinks = styled.div`
   gap: 16px;
   font-family: 'Roboto Condensed';
   text-transform: uppercase;
+  font-weight: 700;
 `;
 
 const Projects: FC<Props> = ({ projects }) => {
