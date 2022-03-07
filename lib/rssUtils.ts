@@ -2,11 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Feed } from 'feed';
-import { BlogPostsListItem, RSSBlogPost } from '../types';
+import { RSSBlogPost } from '../types';
 
-const root = process.cwd();
+const root = (process.env.SITE_URL as string);
 
-// TODO type this correctly - BlogPostListItem doesn't have markdownBody
 export async function getBlogPostsForRss(): Promise<RSSBlogPost[]> {
   const files = fs.readdirSync(path.join(root, 'data', 'blog'));
 
@@ -40,8 +39,8 @@ export async function generateRssFeed() {
   };
 
   const feed = new Feed({
-    title: "Christopher Ehrlich's blog",
-    description: 'TKTK description',
+    title: "Christopher Ehrlich's Blog",
+    description: 'Thoughts about Programming, Education, Design, and other things',
     id: root,
     link: root,
     // TODO: Add image and favicon

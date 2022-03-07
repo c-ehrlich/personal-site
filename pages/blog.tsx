@@ -1,8 +1,8 @@
 import BlogPosts from '../components/BlogPosts';
 import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
-
 import PageSectionContainer from '../components/PageSectionContainer';
+import Link from 'next/link';
 
 const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
   return (
@@ -20,7 +20,8 @@ const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
           about what I&lsquo;ve written, contact me at TKTK contact. I&lsquo;d
           love to hear from you. 🤓
         </p>
-        <h3>✍🏼 Blog posts on my experience as a software engineer</h3>
+        <h1>✍🏼 Blog posts on my experience as a software engineer</h1>
+        <p>📡 Feed: <Link href="/rss/feed.xml"><a>RSS</a></Link>, <Link href="/rss/atom.xml"><a>ATOM</a></Link>, <Link href="/rss/feed.json"><a>JSON</a></Link></p>
         <BlogPosts posts={posts} />
       </section>
     </PageSectionContainer>
