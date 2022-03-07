@@ -28,7 +28,7 @@ const Home: NextPage = () => {
 export const getStaticProps = async () => {
   await generateRssFeed();
 
-  return {};
+  return { props: {} };
 }
 
 export default Home;
