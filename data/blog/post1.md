@@ -1,6 +1,6 @@
 ---
-title: First Post
-description: My First Post
+title: Markdown Test Post
+description: Testing some markdown features
 publishedDate: 2021/02/14
 tags:
   - hello world
