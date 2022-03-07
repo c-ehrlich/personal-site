@@ -44,8 +44,8 @@ export async function generateRssFeed() {
   const feed = new Feed({
     title: "Christopher Ehrlich's Blog",
     description: 'Thoughts about Programming, Education, Design, and other things',
-    id: publishRoot,
-    link: publishRoot,
+    id: `${publishRoot}/blog`,
+    link: `${publishRoot}/blog`,
     // TODO: Add image and favicon
     image: undefined,
     favicon: undefined,
