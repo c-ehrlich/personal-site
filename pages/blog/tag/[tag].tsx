@@ -3,7 +3,7 @@ import BlogPosts from '../../../components/BlogPosts';
 import {
   getAllPostsWithFrontMatter,
   getAllPostsWithTag,
-} from '../../../lib/utils';
+} from '../../../lib/blogUtils';
 import { BlogPostsListItem } from '../../../types';
 
 const TaggedPostsList = ({
