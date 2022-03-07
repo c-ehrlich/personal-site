@@ -8,30 +8,30 @@ const IoniconButton = css`
   cursor: pointer;
 `;
 
-// const StyledDayModeButton = styled(SunnyOutline)`
-//   ${IoniconButton}
-// `;
+const StyledDayModeButton = styled(SunnyOutline)`
+  ${IoniconButton}
+`;
 
-// const StyledNightModeButton = styled(MoonOutline)`
-//   ${IoniconButton}
-// `
+const StyledNightModeButton = styled(MoonOutline)`
+  ${IoniconButton}
+`
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useStore();
 
-  // The theme preference is saved in localstorage which we don't have during
-  // SSR, so we wait until useEffect (which runs client side) to display
-  // anything that depends on localStorage to avoid rehydration errors
-  const [isClientSide, setIsClientside] = useState<boolean>(false);
+  const [hasMounted, setHasMounted] = useState<boolean>(false);
   useEffect(() => {
-    setIsClientside(true);
+    setHasMounted(true);
   }, []);
 
-  return isClientSide ? (
+  if (!hasMounted) {
+    return null;
+  }
+
+  return (
     <>
       {theme === Theme.light ? (
-        // <StyledDayModeButton
-        <SunnyOutline
+        <StyledDayModeButton
           onClick={toggleTheme}
           color={lightTheme.text}
           title='Toggle Light Mode'
@@ -39,8 +39,7 @@ const ThemeToggle = () => {
           width='36px'
         />
       ) : (
-        // <StyledNightModeButton
-        <MoonOutline
+        <StyledNightModeButton
           onClick={toggleTheme}
           color={darkTheme.text}
           title='Toggle Dark Mode'
@@ -49,8 +48,6 @@ const ThemeToggle = () => {
         />
       )}
     </>
-  ) : (
-    <></>
   );
 };
 
