@@ -2,70 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import Blog from '../pages/blog';
+import { getMonthYearDate } from '../lib/utils';
 import { BlogPostsListItem } from '../types';
 import BlogTags from './BlogTags';
 
 type Props = {
   projects: BlogPostsListItem[];
 };
-
-const ProjectList = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 64px;
-`;
-
-const ProjectGridItem = styled.div`
-  display: grid;
-  grid-template-columns: 350px auto;
-  grid-column-gap: 32px;
-  grid-template-areas: 'image text';
-`;
-
-const ProjectImage = styled.div`
-  width: 350px;
-  height: 350px;
-`;
-
-const ProjectText = styled.div`
-  grid-area: text;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-`;
-
-const ProjectTitle = styled.h2`
-  font-family: 'Roboto Condensed';
-  font-weight: 700;
-  font-size: 48px;
-  margin: -14px 0 0 -1px;
-`;
-
-const ProjectTechnologies = styled.p`
-  margin: 0;
-  font-family: 'Roboto Condensed';
-  font-weight: 700;
-  font-size: 300;
-  text-transform: 'capitalize';
-`;
-
-const ProjectDescription = styled.p`
-  margin: 0;
-  font-size: 18px;
-  font-weight: 300;
-`;
-
-const ProjectLinks = styled.div`
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  font-family: 'Roboto Condensed';
-  text-transform: uppercase;
-  font-weight: 700;
-`;
 
 const Projects: FC<Props> = ({ projects }) => {
   return (
@@ -83,6 +26,7 @@ const Projects: FC<Props> = ({ projects }) => {
           </ProjectImage>
           <ProjectText>
             <ProjectTitle>{project.frontMatter.title}</ProjectTitle>
+            <ProjectDate>{getMonthYearDate(project.frontMatter.publishedDate)}</ProjectDate>
             <ProjectTechnologies>
               <BlogTags tags={project.frontMatter.tags} resource='project' />
             </ProjectTechnologies>
@@ -107,5 +51,77 @@ const Projects: FC<Props> = ({ projects }) => {
     </ProjectList>
   );
 };
+
+const ProjectList = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 64px;
+`;
+
+const ProjectGridItem = styled.div`
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-column-gap: 32px;
+  grid-template-areas: 'image text';
+
+  @media (max-width: 800px) {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'image'
+      'text';
+    grid-row-gap: 16px;
+  }
+`;
+
+const ProjectImage = styled.div`
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+`;
+
+const ProjectText = styled.div`
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const ProjectTitle = styled.h2`
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  font-size: 48px;
+  margin: -14px 0 0 -1px;
+`;
+
+const ProjectDate = styled.p`
+  margin-top: -14px;
+  margin-bottom: 0;
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+`
+
+const ProjectTechnologies = styled.p`
+  margin: 0;
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  text-transform: 'capitalize';
+`;
+
+const ProjectDescription = styled.p`
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-weight: 300;
+`;
+
+const ProjectLinks = styled.div`
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+  font-weight: 700;
+`;
 
 export default Projects;
