@@ -1,6 +1,6 @@
 import { ReactChild } from 'react';
 import styled from 'styled-components';
-import { getDate } from '../lib/utils';
+import { getFullDate } from '../lib/utils';
 import { BlogFrontMatter } from '../types';
 import BlogTags from './BlogTags';
 
@@ -15,7 +15,7 @@ const BlogLayout = ({
     <>
       <BlogTitle>{frontMatter.title}</BlogTitle>
       <BlogTags tags={frontMatter.tags} resource='blog' />
-      <div>{getDate(frontMatter.publishedDate)}</div>
+      <div>{getFullDate(frontMatter.publishedDate)}</div>
       {children}
     </>
   );

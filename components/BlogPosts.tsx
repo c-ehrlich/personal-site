@@ -3,7 +3,7 @@ import { BlogPostsListItem } from '../types';
 import React from 'react';
 import BlogTags from './BlogTags';
 import styled from 'styled-components';
-import { getDate } from '../lib/utils';
+import { getFullDate } from '../lib/utils';
 
 type Props = {
   posts: BlogPostsListItem[];
@@ -39,7 +39,7 @@ const BlogPosts = (props: Props) => {
                   />
                 </StyledBlogTags>
 
-                <BlogDate>{getDate(post.frontMatter.publishedDate)}</BlogDate>
+                <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
               </article>
             );
           })}
