@@ -40,7 +40,10 @@ export async function getAllPostsWithTag(
     );
     const { data } = matter(source);
 
-    if (data.tags.indexOf(tag) !== -1) {
+    const caseInsensitiveIndexOf = (arr: string[], q: string) =>
+      arr.findIndex((item) => q.toLowerCase() === item.toLowerCase());
+      
+    if (caseInsensitiveIndexOf(data.tags, tag) !== -1) {
       return [
         {
           frontMatter: data,
@@ -76,5 +79,3 @@ export async function getAllPostsWithFrontMatter(
     ];
   }, []);
 }
-
-
