@@ -2,10 +2,6 @@
 
 TODO.md
 
-# use .babelrc to fix styled components refresh but in dev
-# use rust transpiler in deployment
-.babelrc
-
 ####################################
 # unchanged stock .gitignore below #
 ####################################
