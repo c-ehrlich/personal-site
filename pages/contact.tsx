@@ -5,7 +5,7 @@ import PageSectionContainer from '../components/PageSectionContainer';
 const contact: NextPage = () => {
   return (
     <PageSectionContainer>
-      <h1>You can contact me at:</h1>
+      <h1>👋 You can contact me at:</h1>
       <ul>
         <li>
           <Link href='mailto://ehrlich.christopher@gmail.com'>Email</Link>
