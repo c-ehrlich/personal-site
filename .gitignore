@@ -2,6 +2,9 @@
 
 TODO.md
 
+# rss is created at build time on Vercel
+/public/rss
+
 ####################################
 # unchanged stock .gitignore below #
 ####################################
