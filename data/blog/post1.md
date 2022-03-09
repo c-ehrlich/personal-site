@@ -4,6 +4,7 @@ description: Testing some markdown features
 publishedDate: 2021/02/14
 tags:
   - hello world
+  - fav
 ---
 
 # Hello World

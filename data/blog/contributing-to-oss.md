@@ -5,6 +5,7 @@ publishedDate: 2022/03/20
 tags:
   - Open Source
   - Free Code Camp
+  - Fav
 ---
 
 When I started taking this programming thing seriously, I heard one thing over and over: "The best way to learn is to build projects yourself, and to contribute to open source". 
