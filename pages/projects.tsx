@@ -7,10 +7,8 @@ import { BlogPostsListItem } from '../types';
 const projects = ({ projects }: { projects: BlogPostsListItem[] }) => {
   return (
     <PageSectionContainer>
-      <section className='projects'>
-        <p>Here&apos;s some of my projects</p>
-        <Projects projects={projects} />
-      </section>
+      <h1>🤖 Here are some of my projects.</h1>
+      <Projects projects={projects} />
     </PageSectionContainer>
   );
 };
