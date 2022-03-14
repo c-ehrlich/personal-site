@@ -1,13 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { marked } from 'marked';
 import { Feed } from 'feed';
 import { RSSBlogPost } from '../types';
+import DOMPurify from 'dompurify';
+const prism = require('prismjs');
+const loadLanguages = require('prismjs/components/');
+loadLanguages();
 
 // https://sreetamdas.com/blog/rss-for-nextjs
 
 const getFilesRoot = process.cwd();
-const publishRoot = (process.env.SITE_URL as string);
+const publishRoot = process.env.SITE_URL as string;
 
 export async function getBlogPostsForRss(): Promise<RSSBlogPost[]> {
   const files = fs.readdirSync(path.join(getFilesRoot, 'data', 'blog'));
@@ -43,7 +48,8 @@ export async function generateRssFeed() {
 
   const feed = new Feed({
     title: "Christopher Ehrlich's Blog",
-    description: 'Thoughts about Programming, Education, Design, and other things',
+    description:
+      'Thoughts about Programming, Education, Design, and other things',
     id: `${publishRoot}/blog`,
     link: `${publishRoot}/blog`,
     // TODO: Add image and favicon
@@ -60,23 +66,35 @@ export async function generateRssFeed() {
     author,
   });
 
+  marked.setOptions({
+    highlight: (code, lang) => {
+      if (prism.langauges[lang]) {
+        return prism.highlight(code, prism.languages[lang], lang);
+      } else {
+        return code;
+      }
+    },
+  });
+
   posts.forEach((post) => {
     const url = `${publishRoot}/blog/${post.slug}`;
+    const contentWithSyntax = marked.parse(post.content);
+    const cleanedContent = DOMPurify.sanitize(contentWithSyntax);
 
     feed.addItem({
       title: post.frontMatter.title,
       id: url,
       link: url,
       description: post.frontMatter.description,
-      content: post.content,
+      content: cleanedContent,
       author: [author],
       contributor: [author],
       date: new Date(post.frontMatter.publishedDate),
     });
   });
 
-  fs.mkdirSync("./public/rss", { recursive: true });
-  fs.writeFileSync("./public/rss/feed.xml", feed.rss2());
-  fs.writeFileSync("./public/rss/atom.xml", feed.atom1());
-  fs.writeFileSync("./public/rss/feed.json", feed.json1());
+  fs.mkdirSync('./public/rss', { recursive: true });
+  fs.writeFileSync('./public/rss/feed.xml', feed.rss2());
+  fs.writeFileSync('./public/rss/atom.xml', feed.atom1());
+  fs.writeFileSync('./public/rss/feed.json', feed.json1());
 }
