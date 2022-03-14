@@ -12,6 +12,7 @@ import '@fontsource/roboto-condensed/400.css';
 import '@fontsource/roboto-condensed/700.css';
 import '@fontsource/noto-serif/700.css';
 import '@fontsource/raleway/400.css';
+import '@fontsource/raleway/500.css';
 import '@fontsource/raleway/600.css';
 import '@fontsource/quicksand/700.css';
 

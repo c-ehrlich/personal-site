@@ -35,6 +35,10 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     background-color: ${({ theme }) => theme.linkBg};
   }
 
+  h1 {
+    font-weight: 500;
+  }
+
   * {
     box-sizing: border-box;
   }

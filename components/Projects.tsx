@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { getMonthYearDate } from '../lib/utils';
 import { BlogPostsListItem } from '../types';
@@ -60,6 +60,7 @@ const ProjectList = styled.div`
 `;
 
 const ProjectGridItem = styled.div`
+  margin-top: 16px;
   display: grid;
   grid-template-columns: 400px auto;
   grid-column-gap: 32px;
@@ -94,7 +95,7 @@ const ProjectText = styled.div`
 const ProjectTitle = styled.h2`
   font-family: 'Roboto Condensed';
   font-weight: 700;
-  font-size: 48px;
+  font-size: 44px;
   margin: -15px 0 0 -1px;
 `;
 
