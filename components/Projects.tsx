@@ -28,7 +28,7 @@ const Projects: FC<Props> = ({ projects }) => {
             <ProjectTitle>{project.frontMatter.title}</ProjectTitle>
             <ProjectDate>{getMonthYearDate(project.frontMatter.publishedDate)}</ProjectDate>
             <ProjectTechnologies>
-              <BlogTags tags={project.frontMatter.tags} resource='project' />
+              <BlogTags tags={project.frontMatter.tags} resource='projects' />
             </ProjectTechnologies>
             <ProjectDescription>
               {project.frontMatter.description}
