@@ -24,7 +24,6 @@ const TaggedPostsList = ({
 
 export async function getStaticProps({ params }: Params) {
   const posts: any = await getAllPostsWithTag('blog', params.tag);
-  console.log(posts);
 
   return {
     props: {
