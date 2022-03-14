@@ -14,34 +14,28 @@ const BlogPosts = (props: Props) => {
     <BlogPostList className='posts'>
       {!props.posts && <div>No posts!</div>}
       {props.posts &&
-        props.posts
-          .sort(
-            (a, b) =>
-              new Date(b.frontMatter.publishedDate).getTime() -
-              new Date(a.frontMatter.publishedDate).getTime()
-          )
-          .map((post) => {
-            return (
-              <article key={post.slug} className='post-title'>
-                <BlogTitle>
-                  <BlogMainTitle>
-                    <Link href={{ pathname: `/blog/${post.slug}` }}>
-                      <a>{post.frontMatter.title}</a>
-                    </Link>
-                  </BlogMainTitle>{' '}
-                  {/* - {post.frontMatter.description} */}
-                </BlogTitle>
-                <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
-                <StyledBlogTags>
-                  <BlogTags
-                    hashtag={true}
-                    tags={post.frontMatter.tags}
-                    resource='blog'
-                  />
-                </StyledBlogTags>
-              </article>
-            );
-          })}
+        props.posts.map((post) => {
+          return (
+            <article key={post.slug} className='post-title'>
+              <BlogTitle>
+                <BlogMainTitle>
+                  <Link href={{ pathname: `/blog/${post.slug}` }}>
+                    <a>{post.frontMatter.title}</a>
+                  </Link>
+                </BlogMainTitle>{' '}
+                {/* - {post.frontMatter.description} */}
+              </BlogTitle>
+              <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
+              <StyledBlogTags>
+                <BlogTags
+                  hashtag={true}
+                  tags={post.frontMatter.tags}
+                  resource='blog'
+                />
+              </StyledBlogTags>
+            </article>
+          );
+        })}
     </BlogPostList>
   );
 };

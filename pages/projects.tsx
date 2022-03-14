@@ -14,7 +14,13 @@ const projects = ({ projects }: { projects: BlogPostsListItem[] }) => {
 };
 
 export async function getStaticProps() {
-  const projects = await getAllPostsWithFrontMatter('project');
+  let projects = await getAllPostsWithFrontMatter('project');
+
+  projects = projects.sort(
+    (a, b) =>
+      new Date(b.frontMatter.publishedDate).getTime() -
+      new Date(a.frontMatter.publishedDate).getTime()
+  );
 
   return {
     props: {

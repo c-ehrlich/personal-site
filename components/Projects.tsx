@@ -13,54 +13,48 @@ type Props = {
 const Projects: FC<Props> = ({ projects }) => {
   return (
     <ProjectList>
-      {projects
-        .sort(
-          (a, b) =>
-            new Date(b.frontMatter.publishedDate).getTime() -
-            new Date(a.frontMatter.publishedDate).getTime()
-        )
-        .map((project) => (
-          <ProjectGridItem key={project.slug}>
-            <ProjectImage>
-              <StyledImage
-                src={`${project.frontMatter.image}`}
-                alt={`${project.frontMatter.title} thumbnail`}
-                layout='intrinsic'
-                width='500'
-                height='500'
-              />
-            </ProjectImage>
-            <ProjectText>
-              <ProjectTitle>{project.frontMatter.title}</ProjectTitle>
-              <ProjectDate>
-                {getMonthYearDate(project.frontMatter.publishedDate)}
-              </ProjectDate>
-              <ProjectTechnologies>
-                <BlogTags tags={project.frontMatter.tags} resource='projects' />
-              </ProjectTechnologies>
-              <ProjectDescription>
-                {project.frontMatter.description}
-              </ProjectDescription>
-              <ProjectLinks>
-                {project.frontMatter.github && (
-                  <Link href={project.frontMatter.github}>
-                    <a>GitHub</a>
-                  </Link>
-                )}
-                {project.frontMatter.deployed && (
-                  <Link href={project.frontMatter.deployed}>
-                    <a>Live Demo</a>
-                  </Link>
-                )}
-                {project.frontMatter.video && (
-                  <Link href={project.frontMatter.video}>
-                    <a>Demo Video</a>
-                  </Link>
-                )}
-              </ProjectLinks>
-            </ProjectText>
-          </ProjectGridItem>
-        ))}
+      {projects.map((project) => (
+        <ProjectGridItem key={project.slug}>
+          <ProjectImage>
+            <StyledImage
+              src={`${project.frontMatter.image}`}
+              alt={`${project.frontMatter.title} thumbnail`}
+              layout='intrinsic'
+              width='500'
+              height='500'
+            />
+          </ProjectImage>
+          <ProjectText>
+            <ProjectTitle>{project.frontMatter.title}</ProjectTitle>
+            <ProjectDate>
+              {getMonthYearDate(project.frontMatter.publishedDate)}
+            </ProjectDate>
+            <ProjectTechnologies>
+              <BlogTags tags={project.frontMatter.tags} resource='projects' />
+            </ProjectTechnologies>
+            <ProjectDescription>
+              {project.frontMatter.description}
+            </ProjectDescription>
+            <ProjectLinks>
+              {project.frontMatter.github && (
+                <Link href={project.frontMatter.github}>
+                  <a>GitHub</a>
+                </Link>
+              )}
+              {project.frontMatter.deployed && (
+                <Link href={project.frontMatter.deployed}>
+                  <a>Live Demo</a>
+                </Link>
+              )}
+              {project.frontMatter.video && (
+                <Link href={project.frontMatter.video}>
+                  <a>Demo Video</a>
+                </Link>
+              )}
+            </ProjectLinks>
+          </ProjectText>
+        </ProjectGridItem>
+      ))}
     </ProjectList>
   );
 };
