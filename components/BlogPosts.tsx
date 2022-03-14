@@ -29,8 +29,9 @@ const BlogPosts = (props: Props) => {
                       <a>{post.frontMatter.title}</a>
                     </Link>
                   </BlogMainTitle>{' '}
-                  - {post.frontMatter.description}
+                  {/* - {post.frontMatter.description} */}
                 </BlogTitle>
+                <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
                 <StyledBlogTags>
                   <BlogTags
                     hashtag={true}
@@ -38,8 +39,6 @@ const BlogPosts = (props: Props) => {
                     resource='blog'
                   />
                 </StyledBlogTags>
-
-                <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
               </article>
             );
           })}
@@ -50,7 +49,7 @@ const BlogPosts = (props: Props) => {
 const BlogPostList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 `;
 
 const BlogTitle = styled.div`
@@ -67,7 +66,7 @@ const StyledBlogTags = styled.div`
 
 const BlogDate = styled.p`
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 4px;
   font-size: 12pt;
 `;
 

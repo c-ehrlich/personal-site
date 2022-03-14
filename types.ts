@@ -1,6 +1,5 @@
 export type BlogFrontMatter = {
   title: string;
-  description: string;
   publishedDate: string;
   tags: string[];
   image?: string;
