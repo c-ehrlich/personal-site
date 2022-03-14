@@ -1,5 +1,6 @@
 import { Params } from 'next/dist/server/router';
 import BlogPosts from '../../../components/BlogPosts';
+import PageSectionContainer from '../../../components/PageSectionContainer';
 import {
   getAllPostsWithFrontMatter,
   getAllPostsWithTag,
@@ -14,10 +15,10 @@ const TaggedPostsList = ({
   tag: string;
 }) => {
   return (
-    <>
+    <PageSectionContainer>
       <h2>Posts tagged with &quot;{tag}&quot;</h2>
       <BlogPosts posts={posts} />
-    </>
+    </PageSectionContainer>
   );
 };
 

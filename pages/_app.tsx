@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
@@ -52,7 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Link>
                 </NavLinks>
               </StyledHeader>
-              <Component {...pageProps} />
+              <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+                <Component {...pageProps} />
+              </AnimatePresence>
             </div>
 
             <Footer>
@@ -117,7 +119,7 @@ const NavLink = styled.a`
   font-family: 'Roboto Condensed';
   font-weight: 700;
   text-transform: uppercase;
-`
+`;
 
 const SpacedFlexRow = styled.div`
   display: flex;
