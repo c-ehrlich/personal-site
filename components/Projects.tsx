@@ -16,7 +16,7 @@ const Projects: FC<Props> = ({ projects }) => {
       {projects.map((project) => (
         <ProjectGridItem key={project.slug}>
           <ProjectImage>
-            <Image
+            <StyledImage
               src={`${project.frontMatter.image}`}
               alt={`${project.frontMatter.title} thumbnail`}
               layout='intrinsic'
@@ -80,6 +80,10 @@ const ProjectImage = styled.div`
   object-fit: fill;
 `;
 
+const StyledImage = styled(Image)`
+  border-radius: 8px;
+`;
+
 const ProjectText = styled.div`
   grid-area: text;
   display: flex;
@@ -91,7 +95,7 @@ const ProjectTitle = styled.h2`
   font-family: 'Roboto Condensed';
   font-weight: 700;
   font-size: 48px;
-  margin: -14px 0 0 -1px;
+  margin: -15px 0 0 -1px;
 `;
 
 const ProjectDate = styled.p`
