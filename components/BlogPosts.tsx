@@ -57,7 +57,7 @@ const BlogTitle = styled.div`
 `;
 
 const BlogMainTitle = styled.span`
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 const StyledBlogTags = styled.div`
