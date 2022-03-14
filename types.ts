@@ -5,6 +5,7 @@ export type BlogFrontMatter = {
   tags: string[];
   image?: string;
   github?: string;
+  video?: string;
   deployed?: string;
 };
 
