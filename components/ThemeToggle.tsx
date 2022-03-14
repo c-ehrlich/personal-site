@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import useStore, { Theme } from '../lib/store';
-import { SunnyOutline, MoonOutline } from 'react-ionicons';
-import styled, { css } from 'styled-components';
-import { darkTheme, lightTheme } from './Theme';
+import styled from 'styled-components';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const IoniconButton = css`
+const ThemeButton = styled(motion.button)`
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  height: 40px;
 `;
-
-const StyledDayModeButton = styled(SunnyOutline)`
-  ${IoniconButton}
-`;
-
-const StyledNightModeButton = styled(MoonOutline)`
-  ${IoniconButton}
-`
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useStore();
@@ -29,25 +24,18 @@ const ThemeToggle = () => {
   }
 
   return (
-    <>
-      {theme === Theme.light ? (
-        <StyledDayModeButton
-          onClick={toggleTheme}
-          color={lightTheme.text}
-          title='Toggle Light Mode'
-          height='36px'
-          width='36px'
-        />
-      ) : (
-        <StyledNightModeButton
-          onClick={toggleTheme}
-          color={darkTheme.text}
-          title='Toggle Dark Mode'
-          height='36px'
-          width='36px'
-        />
-      )}
-    </>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <ThemeButton
+        onClick={() => toggleTheme()}
+        key={theme === Theme.light ? 'light-icon' : 'dark-icon'}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        {theme === Theme.light ? '🌤️' : '🌙'}
+      </ThemeButton>
+    </AnimatePresence>
   );
 };
 
