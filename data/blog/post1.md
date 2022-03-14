@@ -24,7 +24,7 @@ Text *e1* **e2**
   * List 2 b
 * List 3
 
-```diff
+```js
 @@ -4,6 +4,5 @@
 -    let foo = bar.baz([1, 2, 3]);
 -    foo = foo + 1;
@@ -32,7 +32,7 @@ Text *e1* **e2**
      console.log(`foo: ${foo}`);
 ```
 
-```
+```text
 console.log("hello");
 ```
 
@@ -57,7 +57,7 @@ Text *e1* **e2**
 console.log("hello");
 ```
 
-```
+```js
 console.log("hello");
 ```
 
@@ -82,6 +82,6 @@ Text *e1* **e2**
 console.log("hello");
 ```
 
-```
+```js
 console.log("hello");
 ```

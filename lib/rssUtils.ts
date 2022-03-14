@@ -1,13 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
 import { Feed } from 'feed';
 import { RSSBlogPost } from '../types';
-import DOMPurify from 'dompurify';
-const prism = require('prismjs');
-const loadLanguages = require('prismjs/components/');
-loadLanguages();
+import { marked } from 'marked';
+import hljs from 'highlight.js';
 
 // https://sreetamdas.com/blog/rss-for-nextjs
 
@@ -66,27 +63,24 @@ export async function generateRssFeed() {
     author,
   });
 
-  marked.setOptions({
-    highlight: (code, lang) => {
-      if (prism.langauges[lang]) {
-        return prism.highlight(code, prism.languages[lang], lang);
-      } else {
-        return code;
-      }
-    },
-  });
-
   posts.forEach((post) => {
     const url = `${publishRoot}/blog/${post.slug}`;
-    const contentWithSyntax = marked.parse(post.content);
-    const cleanedContent = DOMPurify.sanitize(contentWithSyntax);
+
+    marked.setOptions({
+      highlight: (code, lang) => {
+        return hljs.highlight(lang, code).value;
+      },
+    });
+
+    let test = marked(post.content);
+    console.log(test);
 
     feed.addItem({
       title: post.frontMatter.title,
       id: url,
       link: url,
       description: post.frontMatter.description,
-      content: cleanedContent,
+      content: test,
       author: [author],
       contributor: [author],
       date: new Date(post.frontMatter.publishedDate),
