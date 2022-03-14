@@ -112,6 +112,7 @@ const Footer = styled.div`
 const NavLinks = styled.nav`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 16px;
 `;
 
