@@ -3,6 +3,7 @@ import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
 import PageSectionContainer from '../components/PageSectionContainer';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
   return (
@@ -34,7 +35,7 @@ const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
           <a>JSON</a>
         </Link>
       </p>
-      <hr />
+      <HRWithBottomMargin />
       <BlogPosts posts={posts} />
     </PageSectionContainer>
   );
@@ -51,5 +52,10 @@ export async function getStaticProps() {
     },
   };
 }
+
+const HRWithBottomMargin = styled.hr`
+  margin-top: 24px;
+  margin-bottom: 24px;
+`;
 
 export default Blog;

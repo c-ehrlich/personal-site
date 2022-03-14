@@ -105,7 +105,7 @@ const StyledHeader = styled.header`
 const Footer = styled.div`
   width: 100%;
   text-align: center;
-  margin-top: 32px;
+  margin-top: 48px;
   font-family: 'Roboto Condensed';
   font-weight: 300px;
   font-size: 16px;
