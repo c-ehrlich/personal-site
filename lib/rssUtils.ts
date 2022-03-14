@@ -5,6 +5,8 @@ import { Feed } from 'feed';
 import { RSSBlogPost } from '../types';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
+const prism = require('prismjs');
+const loadLanguages = require('prismjs/components/');
 
 // https://sreetamdas.com/blog/rss-for-nextjs
 
@@ -66,21 +68,18 @@ export async function generateRssFeed() {
   posts.forEach((post) => {
     const url = `${publishRoot}/blog/${post.slug}`;
 
-    marked.setOptions({
-      highlight: (code, lang) => {
-        return hljs.highlight(lang, code).value;
-      },
-    });
+    let contentToMark =
+      `**Because most RSS readers strip all formatting, code syntax highlighting will not render properly inline. Please click through to [the article](https://${url}) to see it displayed correctly.**\n\n---\n\n` +
+      post.content;
 
-    let test = marked(post.content);
-    console.log(test);
+    let content = marked(contentToMark);
 
     feed.addItem({
       title: post.frontMatter.title,
       id: url,
       link: url,
       description: post.frontMatter.description,
-      content: test,
+      content,
       author: [author],
       contributor: [author],
       date: new Date(post.frontMatter.publishedDate),
