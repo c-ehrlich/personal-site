@@ -101,7 +101,7 @@ const ProjectDate = styled.p`
   font-weight: 400;
 `
 
-const ProjectTechnologies = styled.p`
+const ProjectTechnologies = styled.div`
   margin: 0;
   font-family: 'Roboto Condensed';
   font-weight: 700;
