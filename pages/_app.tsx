@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
 
             <Footer>
-              © 2016-{new Date().getFullYear()} Christopher Ehrlich · Powered by{' '}
+              Powered by{' '}
               <Link href='https://nextjs.org'>
                 <a>Next.js</a>
               </Link>
