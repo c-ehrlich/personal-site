@@ -8,6 +8,7 @@ const projects = ({ projects }: { projects: BlogPostsListItem[] }) => {
   return (
     <PageSectionContainer>
       <h1>🤖 Here are some of my projects.</h1>
+      <p>Most of these are hosted on free Heroku instances so please allow them a second to spin up 😃</p>
       <Projects projects={projects} />
     </PageSectionContainer>
   );
