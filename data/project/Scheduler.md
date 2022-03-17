@@ -7,7 +7,7 @@ tags:
   - Flask
   - SQLite
   - JavaScript
-image: /img/project/project1.jpg
+image: /img/project/scheduler-screenshot.jpg
 github: https://github.com/c-ehrlich/scheduler
 video: https://www.youtube.com/watch?v=cQ6SVQJTlwI
 ---

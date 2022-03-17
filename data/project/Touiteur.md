@@ -8,7 +8,7 @@ tags:
   - Postgres
   - Jinja
   - JavaScript
-image: /img/project/project1.jpg
+image: /img/project/touiteur-screenshot.jpg
 github: https://github.com/c-ehrlich/Touiteur
 video: https://www.youtube.com/watch?v=2aNYwn2iMns
 ---
