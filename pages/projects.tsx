@@ -1,4 +1,3 @@
-import type { NextPage } from 'next';
 import PageSectionContainer from '../components/PageSectionContainer';
 import Projects from '../components/Projects';
 import DemoProjects from '../components/DemoProjects';
@@ -19,11 +18,15 @@ const projects = (props: Props) => {
         second to spin up 😃
       </p>
       <Projects projects={props.projects} />
-      <h1 style={{ marginTop: '64px' }}>⚙️ ...and here are some bits and bobs.</h1>
+      <h1 style={{ marginTop: '64px' }}>
+        ⚙️ ...and here are some bits and bobs.
+      </h1>
       <p>
-        I&apos;m always interested in trying new technologies and building demo
-        projects. These aren&apos;t quite full projects, but a collection of tests and
-        experiments. Most have readmes, some have live demos, all have the source code 😃
+        I&apos;m always interested in trying new technologies and expanding my
+        understanding of the ones I am already using. These aren&apos;t
+        quite full projects, but a collection of demo projects, tests and
+        experiments. Most have READMEs, some have live demos, all have the
+        source code 😃
       </p>
       <DemoProjects demoProjects={props.demoProjects} />
     </PageSectionContainer>
