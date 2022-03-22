@@ -46,8 +46,6 @@ export async function getStaticProps() {
       new Date(a.frontMatter.publishedDate).getTime()
   );
 
-console.log(demoProjects);
-
   return {
     props: {
       projects,
