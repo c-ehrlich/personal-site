@@ -1,4 +1,4 @@
-import { ReactChild } from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { getFullDate } from '../lib/utils';
 import { BlogFrontMatter } from '../types';
@@ -9,7 +9,7 @@ const BlogLayout = ({
   children,
 }: {
   frontMatter: BlogFrontMatter;
-  children: ReactChild | ReactChild[];
+  children: ReactNode;
 }) => {
   return (
     <>

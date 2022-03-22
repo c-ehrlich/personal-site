@@ -1,4 +1,4 @@
-import { ReactChild } from 'react';
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 const variants = {
@@ -9,7 +9,7 @@ const variants = {
 const PageSectionContainer = ({
   children,
 }: {
-  children: ReactChild | ReactChild[];
+  children: ReactNode;
 }) => {
   return (
     <motion.main
