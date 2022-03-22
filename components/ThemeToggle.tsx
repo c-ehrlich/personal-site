@@ -11,6 +11,13 @@ const ThemeButton = styled(motion.button)`
   text-align: right;
   height: 100%;
   padding-right: 0;
+
+  // prevent selecting
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 `;
 
 const ThemeToggle = () => {
