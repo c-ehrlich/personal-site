@@ -1,7 +1,7 @@
 ---
 title: Scheduler 
-description: A web app for scheduling events and signing up for time slots. TKTK add more information
-publishedDate: 2021/05/12
+description: A web app that lets users create events and sign up for time slots.
+publishedDate: 2021/07/12
 tags:
   - Python
   - Flask

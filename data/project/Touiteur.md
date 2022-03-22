@@ -1,6 +1,6 @@
 ---
 title: Touiteur
-description: A Twitter clone. TKTK. Get a good screenshot from the YouTube video, photoshop out the DJDT thing.
+description: A totally original social network for posting 140 character length status updates. Features include likes, replies, mentions, blocklist, private accounts, i18n localization, themes, and push notifications.  
 publishedDate: 2021/08/21
 tags:
   - Python
