@@ -29,7 +29,7 @@ export async function getPostBySlug(dataType: string, slug: string) {
 export async function getAllPostsWithTag(
   dataType: string,
   tag: string
-): Promise<{ frontMatter: Params; slug: string }[]> {
+): Promise<BlogPostsListItem[]> {
   const files = fs.readdirSync(path.join(root, 'data', dataType));
 
   // @ts-ignore FIXME do this in a cleaner way

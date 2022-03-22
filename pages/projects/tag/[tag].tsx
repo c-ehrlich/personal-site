@@ -1,42 +1,78 @@
 import { Params } from 'next/dist/server/router';
 import PageSectionContainer from '../../../components/PageSectionContainer';
+import DemoProjects from '../../../components/DemoProjects';
 import Projects from '../../../components/Projects';
 import {
   getAllPostsWithFrontMatter,
   getAllPostsWithTag,
 } from '../../../lib/blogUtils';
 import { BlogPostsListItem } from '../../../types';
+import styled from 'styled-components';
 
-const TaggedProjectsList = ({
-  projects,
-  tag,
-}: {
+interface Props {
   projects: BlogPostsListItem[];
+  demoProjects: BlogPostsListItem[];
   tag: string;
-}) => {
+}
+
+const H2WithBigTopMargin = styled.h2`
+  margin-top: 64px;
+`;
+
+const TaggedProjectsList = (props: Props) => {
   return (
     <PageSectionContainer>
-      <h2>Projects tagged with &quot;{tag}&quot;</h2>
-      <Projects projects={projects} />
+      {props.projects && props.projects.length > 0 ? (
+        <>
+          <h2>Projects tagged with &quot;{props.tag}&quot;</h2>
+          <Projects projects={props.projects} />
+        </>
+      ) : (
+        <h2>There are no Projects tagged with &quot;{props.tag}&quot;</h2>
+      )}
+      {props.demoProjects && props.demoProjects.length > 0 && (
+        <>
+          <H2WithBigTopMargin>Bits and bobs tagged with &quot;{props.tag}&quot;</H2WithBigTopMargin>
+          <DemoProjects demoProjects={props.demoProjects} />
+        </>
+      )}
     </PageSectionContainer>
   );
 };
 
 export async function getStaticProps({ params }: Params) {
-  const projects: any = await getAllPostsWithTag('project', params.tag);
+  const projects: BlogPostsListItem[] = await getAllPostsWithTag(
+    'project',
+    params.tag
+  );
+  const demoProjects: BlogPostsListItem[] = await getAllPostsWithTag(
+    'demoproject',
+    params.tag
+  );
 
   return {
     props: {
       projects,
+      demoProjects,
       tag: params.tag,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const allProjects: BlogPostsListItem[] = await getAllPostsWithFrontMatter('project');
+  const projects: BlogPostsListItem[] = await getAllPostsWithFrontMatter(
+    'project'
+  );
+  const demoProjects: BlogPostsListItem[] = await getAllPostsWithFrontMatter(
+    'demoproject'
+  );
 
-  // FIXME do this with reduce instead
+  const allProjects = ([] as BlogPostsListItem[]).concat(
+    projects,
+    demoProjects
+  );
+
+  // TODO use reduce instead
   const allTags: string[] = [];
   allProjects.forEach((project) => {
     project.frontMatter.tags.forEach((tag: string) => {
