@@ -8,7 +8,9 @@ const ThemeButton = styled(motion.button)`
   border: none;
   background-color: transparent;
   font-size: 40px;
-  height: 40px;
+  text-align: right;
+  height: 100%;
+  padding-right: 0;
 `;
 
 const ThemeToggle = () => {
