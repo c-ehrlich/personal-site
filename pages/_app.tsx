@@ -7,6 +7,8 @@ import { GlobalStyles } from '../components/globalStyles';
 import { lightTheme, darkTheme } from '../components/Theme';
 import useStore, { Theme } from '../lib/store';
 import ThemeToggle from '../components/ThemeToggle';
+import HeadComponent from '../components/HeadComponent';
+
 import '@fontsource/roboto-condensed/300.css';
 import '@fontsource/roboto-condensed/400.css';
 import '@fontsource/roboto-condensed/700.css';
@@ -24,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {/* FIXME: do both of these components need the theme? */}
       <ThemeProvider theme={theme === Theme.light ? lightTheme : darkTheme}>
         <GlobalStyles theme={theme === Theme.light ? lightTheme : darkTheme} />
+        <HeadComponent />
         <ContainerOuter>
           <ContainerInner>
             <div>
@@ -54,7 +57,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Link>
                 </NavLinks>
               </StyledHeader>
-              <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+              <AnimatePresence
+                exitBeforeEnter
+                initial={false}
+                onExitComplete={() => window.scrollTo(0, 0)}
+              >
                 <Component {...pageProps} />
               </AnimatePresence>
             </div>
