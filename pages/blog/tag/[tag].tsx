@@ -23,7 +23,13 @@ const TaggedPostsList = ({
 };
 
 export async function getStaticProps({ params }: Params) {
-  const posts: any = await getAllPostsWithTag('blog', params.tag);
+  const unsortedPosts: BlogPostsListItem[] = await getAllPostsWithTag('blog', params.tag);
+
+  const posts = unsortedPosts.sort(
+    (a, b) =>
+      new Date(b.frontMatter.publishedDate).getTime() -
+      new Date(a.frontMatter.publishedDate).getTime()
+  );
 
   return {
     props: {
