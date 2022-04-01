@@ -1,37 +1,53 @@
-markdown blog functionality based on this post by Julia Tan https://bionicjulia.com/blog/setting-up-nextjs-markdown-blog-with-typescript
-----
+# Personal Site
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## What is this?
+This is the repository for my homepage / blog / portfolio. It uses Next.js Server Side Generation to create its content from Markdown files. There are many like it, but this one is mine.
 
 ## Getting Started
 
-First, run the development server:
-
+Clone the repository, then install dependencies and start the development server
 ```bash
-npm run dev
-# or
+yarn
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding blog posts or projects
+Data for each item goes into a Markdown file, which should be saved to `/data/<resource name>/<arbitrary filename>.md`. Images should be saved to anywhere inside the `/public` folder.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Each file must start with the relevant frontmatter, followed by the project or post itself in markdown.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Example blog post frontmatter
+```
+---
+title: My first blog post
+publishedDate: 2022/03/13
+tags:
+  - Hello World
+  - Another tag
+---
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Example project frontmatter
+```
+---
+title: Todo list
+description: Everyone's favourite project!
+publishedDate: 2022/03/13
+tags:
+  - 6502 Assembly
+  - JQuery
+  - Duct Tape
+image: /img/project/project-screenshot.jpg
+github: https://github.com/username/reponame
+---
+```
+Note that you should not include `/public` in the image url.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy this app is to use the [Vercel Platform](https://vercel.com/new).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Acknowledgements
+Markdown blog functionality based on this post by Julia Tan https://bionicjulia.com/blog/setting-up-nextjs-markdown-blog-with-typescript
