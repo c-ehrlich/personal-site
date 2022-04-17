@@ -1,7 +1,7 @@
 ---
 title: Random Quote Machine
 description: Part of the FreeCodeCamp React Curriculum. App that shows random quotes and lets users tweet them. Focus on Neumorphic styling.
-publishedDate: 2022/11/22
+publishedDate: 2021/11/22
 tags:
   - React
   - TypeScript
