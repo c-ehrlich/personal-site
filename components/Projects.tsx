@@ -22,6 +22,7 @@ const Projects: FC<Props> = ({ projects }) => {
               layout='intrinsic'
               width='500'
               height='500'
+              placeholder='blur'
             />
           </ProjectImage>
           <ProjectText>
