@@ -19,10 +19,10 @@ const Projects: FC<Props> = ({ projects }) => {
             <StyledImage
               src={`${project.frontMatter.image}`}
               alt={`${project.frontMatter.title} thumbnail`}
-              layout='intrinsic'
-              width='500'
-              height='500'
-              placeholder='blur'
+              layout='responsive'
+              width='1000'
+              height='1000'
+              // placeholder='blur'
             />
           </ProjectImage>
           <ProjectText>
@@ -85,8 +85,12 @@ const ProjectGridItem = styled.div`
 
 const ProjectImage = styled.div`
   width: 100%;
+  position: relative;
   height: auto;
-  object-fit: fill;
+  object-fit: cover;
+  border-radius: 8px;
+  /* border: 1px solid grey; */
+  box-shadow: 1px 1px 7px -2px rgba(0, 0, 0, 0.8);
 `;
 
 const StyledImage = styled(Image)`
