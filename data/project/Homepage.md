@@ -8,4 +8,5 @@ tags:
   - React
 image: /img/project/homepage-mockup.jpg
 github: https://github.com/c-ehrlich/personal-site
+deployed: https://c-ehrlich.dev/projects
 ---
