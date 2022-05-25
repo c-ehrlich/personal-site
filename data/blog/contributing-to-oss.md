@@ -1,7 +1,7 @@
 ---
 title: How Start Contributing to Open Source
 description: My journey to my first Open Source commits
-publishedDate: 2022/03/20
+publishedDate: 2022/05/25
 tags:
   - Open Source
   - Free Code Camp

@@ -10,21 +10,25 @@ const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
     <PageSectionContainer>
       <h1>✍🏼 Blog posts on my experience as a developer</h1>
       <p>
-        I&lsquo;m trying to solidify my learnings and help others at the same
-        time by writing these short blog posts. I generally write about problems
-        I come across and how I solved them. I&lsquo;ll occassionally also write
-        about my personal experiences of making progress as a developer, and
-        thoughts about how my experiences as a developer overlap with my
-        previous experiences as a designer and teacher.
+        As a strong believe in{' '}
+        <Link href='https://www.swyx.io/learn-in-public/'>
+          <a>Learning in Public</a>
+        </Link>{' '}
+        I try both solidify my learning and share with others by writing about
+        my experiences. I generally write about problems I come across and how I
+        solved them. I&lsquo;ll occassionally also write about my personal
+        experiences of making progress as a developer, and thoughts about how my
+        experiences as a developer overlap with my previous experiences as a
+        designer and teacher.
       </p>
-      <p>
+      {/* <p>
         These posts range from quick mind dumps to more time intensive posts, so
         I&apos;ve collected a few{' '}
         <Link href='/blog/tag/fav'>
           <a>favourites</a>
         </Link>
         .
-      </p>
+      </p> */}
       <p>
         If you spot an error, or have any comments, suggestions or questions
         about what I&lsquo;ve written, please{' '}
