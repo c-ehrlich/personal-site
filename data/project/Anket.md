@@ -13,4 +13,5 @@ tags:
   - Mantine UI
 image: /img/project/anket-screenshot.png
 github: https://github.com/c-ehrlich/anket
+deployed: https://anket-surveys.vercel.app
 ---
