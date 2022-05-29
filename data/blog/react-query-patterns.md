@@ -45,26 +45,26 @@ const useUpdateGroup = ({
   groupId: string;
 }) => {
   const queryClient = useQueryClient();
-  const queryKey = [QueryKeys.group, surveyId];
+  const queryKey = [QueryKeys.group, surveyId]; // Create Query Key
 
   return useMutation(
-    queryKey,
+    queryKey, // Usage #1
     (data) => axios.patch(`/api/group/${groupId}`, data),
     {
       onError: (e) => {
         console.error(e);
-        queryClient.invalidateQueries(queryKey);
+        queryClient.invalidateQueries(queryKey); // Usage #2
       }
       onMutate: (data) => {
-        queryClient.cancelQueries(queryKey);
-        let optimisticUpdate = queryClient.getQueryData(queryKey);
+        queryClient.cancelQueries(queryKey); // Usage #3
+        let optimisticUpdate = queryClient.getQueryData(queryKey); // Usage #4
         if (optimisticUpdate) {
           /* create the updated object */
-          queryClient.setQueryData(queryKey, optimisticUpdate);
+          queryClient.setQueryData(queryKey, optimisticUpdate); // Usage #5
         }
       },
       onSettled: () => {
-        queryClient.invalidateQueries(queryKey);
+        queryClient.invalidateQueries(queryKey); // Usage #6
       },
     }
   );
@@ -104,7 +104,7 @@ onMutate: (data) => {
   queryClient.cancelQueries(queryKey);
   let optimisticUpdate = queryClient.getQueryData(queryKey);
   if (optimisticUpdate) {
-    optimisticUpdate.foo.bar.baz = 'new value';
+    optimisticUpdate.foo.bar.baz = 'new value'; // modify a deeply nested oject
     queryClient.setQueryData(queryKey, optimisticUpdate);
   }
 },
