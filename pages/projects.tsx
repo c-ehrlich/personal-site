@@ -15,15 +15,8 @@ const projects = (props: Props) => {
     <PageSectionContainer>
       <h1>🤖 Here are some of my projects.</h1>
       <p>
-        Most of these are hosted on free Heroku instances so please allow them a
-        second to spin up 😃
-      </p>
-      <p>
-        Additionally you can see my{' '}
-        <Link href='/pdf/ce-portfolio-2020.pdf'>
-          <a>Fashion Design Portfolio</a>
-        </Link>{' '}
-        (pdf, about 5mb).
+        The backends and databases are hosted on various free tiers so please
+        allow them a second to spin up 😃
       </p>
       <Projects projects={props.projects} />
       <h1 style={{ marginTop: '64px' }}>
