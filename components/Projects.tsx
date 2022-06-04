@@ -72,7 +72,9 @@ const ProjectGridItem = styled.div`
   display: grid;
   grid-template-columns: 400px auto;
   grid-column-gap: 32px;
-  grid-template-areas: 'image text';
+  grid-template-areas: 
+    'image text'
+    '.     text';
 
   @media (max-width: 800px) {
     grid-template-columns: 100%;
@@ -90,7 +92,7 @@ const ProjectImage = styled.div`
   object-fit: cover;
   border-radius: 8px;
   /* border: 1px solid grey; */
-  box-shadow: 1px 1px 7px -2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 15px -2px rgba(0, 0, 0, 0.2);
 `;
 
 const StyledImage = styled(Image)`
