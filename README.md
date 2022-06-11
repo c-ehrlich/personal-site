@@ -49,5 +49,9 @@ The easiest way to deploy this app is to use the [Vercel Platform](https://verce
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Performance and Accessibility
+
+Performance and Accessibility are important aspects of web design to me. I like using Google's Lighthouse test to measure how I'm doing, but I believe it should not be taken as the only measure. For example, there is a known bug relating to [Image size](https://github.com/GoogleChrome/lighthouse/issues/11631) that currently prevents this website from scoring 100 on Lighthouse. It has no influence on humans using the site, so I don't believe it is worth dealing with.
+
 ## Acknowledgements
 Markdown blog functionality based on this post by Julia Tan https://bionicjulia.com/blog/setting-up-nextjs-markdown-blog-with-typescript
