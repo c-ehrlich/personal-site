@@ -5,11 +5,12 @@ const nextConfig = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
-  reactStrictMode: true,
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
   },
+  productionBrowserSourceMaps: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
