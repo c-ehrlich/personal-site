@@ -6,6 +6,10 @@ const nextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
-}
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
