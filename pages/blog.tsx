@@ -10,7 +10,7 @@ const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
     <PageSectionContainer>
       <h1>✍🏼 Blog posts on my experience as a developer</h1>
       <p>
-        As a strong believe in{' '}
+        As a strong believer in{' '}
         <Link href='https://www.swyx.io/learn-in-public/'>
           <a>Learning in Public</a>
         </Link>{' '}
