@@ -1,6 +1,6 @@
 ---
 title: Calculator
-description: A calculator built in React, as a tribute to the iconic Braun ET55 and ET66 calculators. Key features include Regular and Scientific mode, Memory, and extensive styling and animation.
+description: A calculator built in React, as a tribute to the iconic Braun ET55 and ET66 calculators. Uses a State Machine built in Zustand to handle input logic. Key features include Regular and Scientific mode, Memory, and skeuomorphic styling and animation.
 publishedDate: 2022/01/20
 tags:
   - React
