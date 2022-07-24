@@ -35,9 +35,13 @@ const Home: NextPage = () => {
           in programming, and started teaching myself Full Stack development.
         </p>
         <p>
-          My goal is to combine my skills as a <strong>developer</strong> and{' '}
-          <strong>designer</strong> and work for a mission-driven company to
-          develop real, useful products.
+          I currently work for{' '}
+          <Link href='https://www.kompany.at'>kompany</Link>, a subsidiary of{' '}
+          <Link href='https://www.moodys.com/'>Moody&apos;s</Link>.
+        </p>
+        <p>
+          Outside of work, I am passionate about creating tools, teaching,
+          language learning, and clothesmaking.
         </p>
       </>
     </PageSectionContainer>
