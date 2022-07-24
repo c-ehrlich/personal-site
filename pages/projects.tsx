@@ -20,6 +20,19 @@ const projects = (props: Props) => {
       </p>
       <Projects projects={props.projects} />
       <h1 style={{ marginTop: '64px' }}>
+        🤝 I have also made significant OSS contributions, including to:
+      </h1>
+      <ul>
+        <li>
+          <Link href='https://github.com/t3-oss/create-t3-app'>
+            Create T3 App
+          </Link>
+        </li>
+        <li>
+          <Link href='https://github.com/freeCodeCamp'>freeCodeCamp</Link>
+        </li>
+      </ul>
+      <h1 style={{ marginTop: '64px' }}>
         ⚙️ ...and here are some bits and bobs.
       </h1>
       <p>
