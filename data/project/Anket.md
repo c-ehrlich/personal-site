@@ -8,7 +8,7 @@ tags:
   - React
   - Node.js
   - PostgresQL
-  - Prisma 2
+  - Prisma
   - Zod
   - Mantine UI
 image: /img/project/anket-screenshot.png
