@@ -89,7 +89,7 @@ const ContainerInner = styled.div`
   width: 100%;
   max-width: 960px;
   padding: 32px 16px 16px 16px;
-  margin-bottom: 64px;
+  padding-bottom: 64px;
 `;
 
 const ContainerOuter = styled.div`
