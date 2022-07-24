@@ -65,13 +65,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Component {...pageProps} />
               </AnimatePresence>
             </div>
-
-            <Footer>
-              Powered by{' '}
-              <Link href='https://nextjs.org'>
-                <a>Next.js</a>
-              </Link>
-            </Footer>
           </ContainerInner>
         </ContainerOuter>
       </ThemeProvider>
@@ -96,6 +89,7 @@ const ContainerInner = styled.div`
   width: 100%;
   max-width: 960px;
   padding: 32px 16px 16px 16px;
+  margin-bottom: 64px;
 `;
 
 const ContainerOuter = styled.div`
