@@ -1,4 +1,4 @@
-import { Params } from 'next/dist/server/router';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import BlogPosts from '../../../components/BlogPosts';
 import PageSectionContainer from '../../../components/PageSectionContainer';
 import {
@@ -23,7 +23,10 @@ const TaggedPostsList = ({
 };
 
 export async function getStaticProps({ params }: Params) {
-  const unsortedPosts: BlogPostsListItem[] = await getAllPostsWithTag('blog', params.tag);
+  const unsortedPosts: BlogPostsListItem[] = await getAllPostsWithTag(
+    'blog',
+    params.tag
+  );
 
   const posts = unsortedPosts.sort(
     (a, b) =>
@@ -40,7 +43,9 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const allPosts: BlogPostsListItem[] = await getAllPostsWithFrontMatter('blog');
+  const allPosts: BlogPostsListItem[] = await getAllPostsWithFrontMatter(
+    'blog'
+  );
 
   // FIXME do this with reduce instead
   const allTags: string[] = [];

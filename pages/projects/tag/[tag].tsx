@@ -1,4 +1,3 @@
-import { Params } from 'next/dist/server/router';
 import PageSectionContainer from '../../../components/PageSectionContainer';
 import DemoProjects from '../../../components/DemoProjects';
 import Projects from '../../../components/Projects';
@@ -8,6 +7,7 @@ import {
 } from '../../../lib/blogUtils';
 import { BlogPostsListItem } from '../../../types';
 import styled from 'styled-components';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 interface Props {
   projects: BlogPostsListItem[];
@@ -32,7 +32,9 @@ const TaggedProjectsList = (props: Props) => {
       )}
       {props.demoProjects && props.demoProjects.length > 0 && (
         <>
-          <H2WithBigTopMargin>Bits and bobs tagged with &quot;{props.tag}&quot;</H2WithBigTopMargin>
+          <H2WithBigTopMargin>
+            Bits and bobs tagged with &quot;{props.tag}&quot;
+          </H2WithBigTopMargin>
           <DemoProjects demoProjects={props.demoProjects} />
         </>
       )}

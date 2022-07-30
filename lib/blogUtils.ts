@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { Params } from 'next/dist/server/router';
 import { BlogPostsListItem } from '../types';
 
 const root = process.cwd();
@@ -42,7 +41,7 @@ export async function getAllPostsWithTag(
 
     const caseInsensitiveIndexOf = (arr: string[], q: string) =>
       arr.findIndex((item) => q.toLowerCase() === item.toLowerCase());
-      
+
     if (caseInsensitiveIndexOf(data.tags, tag) !== -1) {
       return [
         {
