@@ -35,8 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <Avatar
                     src='/img/avatar.jpg'
                     alt='Christopher Ehrlich face'
-                    width={256}
-                    height={256}
+                    width={128}
+                    height={128}
+                    priority
                   />
                   <ThemeToggle />
                 </SpacedFlexRow>
