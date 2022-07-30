@@ -7,16 +7,24 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BlogLayout from '../../components/BlogLayout';
 import { BlogPostProps } from '../../types';
 import { getFiles, getPostBySlug } from '../../lib/blogUtils';
-import React from 'react';
-import { Params } from 'next/dist/server/router';
 import Link from 'next/link';
 import PageSectionContainer from '../../components/PageSectionContainer';
+import Head from 'next/head';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
   if (!frontMatter) return <></>;
 
   return (
     <PageSectionContainer>
+      <Head>
+        <title>{frontMatter.title} - Christopher Ehrlich</title>
+        <meta
+          name='description'
+          content={`Christopher Ehrlich Developer Portfolio - ${frontMatter.title}`}
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <BlogLayout frontMatter={frontMatter}>
         <ReactMarkdown
           children={markdownBody}

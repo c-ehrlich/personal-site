@@ -1,10 +1,19 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import PageSectionContainer from '../components/PageSectionContainer';
 
 const contact: NextPage = () => {
   return (
     <PageSectionContainer>
+      <Head>
+        <title>Content - Christopher Ehrlich</title>
+        <meta
+          name='description'
+          content='Christopher Ehrlich Developer Portfolio - Contact'
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <h1>👋 You can contact me at:</h1>
       <ul>
         <li>

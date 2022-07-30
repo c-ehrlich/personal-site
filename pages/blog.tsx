@@ -4,10 +4,19 @@ import { BlogPostsListItem } from '../types';
 import PageSectionContainer from '../components/PageSectionContainer';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
   return (
     <PageSectionContainer>
+      <Head>
+        <title>Blog - Christopher Ehrlich</title>
+        <meta
+          name='description'
+          content='Christopher Ehrlich Developer Portfolio - Blog'
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <h1>✍🏼 Blog posts on my experience as a developer</h1>
       <p>
         As a strong believer in{' '}

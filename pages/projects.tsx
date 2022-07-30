@@ -4,6 +4,7 @@ import DemoProjects from '../components/DemoProjects';
 import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
 import Link from 'next/link';
+import Head from 'next/head';
 
 interface Props {
   projects: BlogPostsListItem[];
@@ -13,6 +14,14 @@ interface Props {
 const projects = (props: Props) => {
   return (
     <PageSectionContainer>
+      <Head>
+        <title>Projects - Christopher Ehrlich</title>
+        <meta
+          name='description'
+          content='Christopher Ehrlich Developer Portfolio - Projects'
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <h1>🤖 Here are some of my projects.</h1>
       <p>
         The backends and databases are hosted on various free tiers so please

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 import { getMonthYearDate } from '../lib/utils';
 import { BlogPostsListItem } from '../types';
@@ -72,7 +72,7 @@ const ProjectGridItem = styled.div`
   display: grid;
   grid-template-columns: 400px auto;
   grid-column-gap: 32px;
-  grid-template-areas: 
+  grid-template-areas:
     'image text'
     '.     text';
 

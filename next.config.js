@@ -29,6 +29,11 @@ const nextConfig = {
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

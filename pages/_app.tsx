@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../components/globalStyles';
@@ -35,8 +35,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <Avatar
                     src='/img/avatar.jpg'
                     alt='Christopher Ehrlich face'
-                    width={128}
-                    height={128}
+                    width={256}
+                    height={256}
                   />
                   <ThemeToggle />
                 </SpacedFlexRow>
