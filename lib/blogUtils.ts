@@ -5,11 +5,11 @@ import { BlogPostsListItem } from '../types';
 
 const root = process.cwd();
 
-export async function getFiles(dataType: string) {
+export function getFiles(dataType: string) {
   return fs.readdirSync(path.join(root, 'data', dataType), 'utf8'); // TODO is it utf-8?
 }
 
-export async function getPostBySlug(dataType: string, slug: string) {
+export function getPostBySlug(dataType: string, slug: string) {
   const source = fs.readFileSync(
     path.join(root, 'data', dataType, `${slug}.md`),
     'utf8'
@@ -25,10 +25,10 @@ export async function getPostBySlug(dataType: string, slug: string) {
 
 // FIXME: DRY this - this and getAllPostsWithFrontMatter should call the same
 // generic getPosts function that takes an object of what to filter based on
-export async function getAllPostsWithTag(
+export function getAllPostsWithTag(
   dataType: string,
   tag: string
-): Promise<BlogPostsListItem[]> {
+): BlogPostsListItem[] {
   const files = fs.readdirSync(path.join(root, 'data', dataType));
 
   // @ts-ignore FIXME do this in a cleaner way
@@ -56,9 +56,9 @@ export async function getAllPostsWithTag(
   }, []);
 }
 
-export async function getAllPostsWithFrontMatter(
+export function getAllPostsWithFrontMatter(
   dataType: string
-): Promise<BlogPostsListItem[]> {
+): BlogPostsListItem[] {
   const files = fs.readdirSync(path.join(root, 'data', dataType));
 
   // @ts-ignore FIXME do this in a cleaner way
