@@ -12,7 +12,6 @@ import HeadComponent from '../components/HeadComponent';
 import '@fontsource/roboto-condensed/300.css';
 import '@fontsource/roboto-condensed/400.css';
 import '@fontsource/roboto-condensed/700.css';
-import '@fontsource/noto-serif/700.css';
 import '@fontsource/raleway/400.css';
 import '@fontsource/raleway/500.css';
 import '@fontsource/raleway/600.css';
@@ -78,7 +77,7 @@ const Avatar = styled(Image)`
 `;
 
 const HelloText = styled.h1`
-  font-family: 'Noto Serif';
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
 `;
 

@@ -175,11 +175,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/noto-serif@^4.5.4":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.5.9.tgz#dae24fe204a8bfaaf98121efbc3adf0b0682af43"
-  integrity sha512-qvVrkuEwAKGKswmaETS9RVzrGTqlvQRHK60TJ9ncH1RA7ujqb8+o8lLgU3dK3KcggQWWfTa/ozNU8sNc1hXH4g==
-
 "@fontsource/quicksand@^4.5.4":
   version "4.5.9"
   resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-4.5.9.tgz#48f3a2bf5a46690c67549f6023581538156264d3"
