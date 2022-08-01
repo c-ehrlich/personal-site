@@ -26,13 +26,11 @@ const BlogPosts = (props: Props) => {
                 {/* - {post.frontMatter.description} */}
               </BlogTitle>
               <BlogDate>{getFullDate(post.frontMatter.publishedDate)}</BlogDate>
-              <StyledBlogTags>
-                <BlogTags
-                  hashtag={true}
-                  tags={post.frontMatter.tags}
-                  resource='blog'
-                />
-              </StyledBlogTags>
+              <BlogTags
+                hashtag={true}
+                tags={post.frontMatter.tags}
+                resource='blog'
+              />
             </article>
           );
         })}
@@ -52,10 +50,6 @@ const BlogTitle = styled.div`
 
 const BlogMainTitle = styled.span`
   font-weight: 600;
-`;
-
-const StyledBlogTags = styled.div`
-  font-family: 'Roboto Condensed';
 `;
 
 const BlogDate = styled.p`
