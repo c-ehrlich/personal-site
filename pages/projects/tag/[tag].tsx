@@ -46,7 +46,7 @@ export async function getStaticProps({ params }: Params) {
   const projects: BlogPostsListItem[] = await getAllPostsWithTag(
     'project',
     params.tag
-  );
+  ).reverse();
   const demoProjects: BlogPostsListItem[] = await getAllPostsWithTag(
     'demoproject',
     params.tag
