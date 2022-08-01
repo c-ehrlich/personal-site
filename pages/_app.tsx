@@ -103,15 +103,6 @@ const StyledHeader = styled.header`
   margin-bottom: 16px;
 `;
 
-const Footer = styled.div`
-  width: 100%;
-  text-align: center;
-  margin-top: 48px;
-  font-family: 'Roboto Condensed';
-  font-weight: 300px;
-  font-size: 16px;
-`;
-
 const NavLinks = styled.nav`
   display: flex;
   flex-direction: row;
