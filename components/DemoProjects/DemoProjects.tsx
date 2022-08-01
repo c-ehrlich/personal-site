@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import { BlogPostsListItem } from '../types';
-import BlogTags from './BlogTags';
+import { FC } from 'react';
+import { BlogPostsListItem } from '../../types';
+import BlogTags from '../BlogTags/BlogTags';
+import s from './DemoProjects.module.css';
 
 type Props = {
   demoProjects: BlogPostsListItem[];
@@ -13,24 +13,17 @@ const Projects: FC<Props> = ({ demoProjects }) => {
     <div>
       {demoProjects.map((project) => (
         <div key={project.frontMatter.title}>
-          <ProjectText >
+          <p className={s.projectText}>
             <Link passHref href={project.frontMatter.github as string}>
-              <ProjectTitle>{project.frontMatter.title}</ProjectTitle>
+              <a className={s.projectTitle}>{project.frontMatter.title}</a>
             </Link>{' '}
             - {project.frontMatter.description}
-          </ProjectText>
+          </p>
           <BlogTags tags={project.frontMatter.tags} resource='projects' />
         </div>
       ))}
     </div>
   );
 };
-
-const ProjectText = styled.p`
-  margin-bottom: 4px;
-`;
-const ProjectTitle = styled.a`
-  font-weight: 700;
-`;
 
 export default Projects;

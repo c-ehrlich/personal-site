@@ -1,10 +1,10 @@
-import BlogPosts from '../components/BlogPosts';
+import BlogPosts from '../components/BlogPosts/BlogPosts';
 import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
-import PageSectionContainer from '../components/PageSectionContainer';
+import PageSectionContainer from '../components/PageSectionContainer/PageSectionContainer';
 import Link from 'next/link';
-import styled from 'styled-components';
 import Head from 'next/head';
+import s from '../styles/Blog.module.css';
 
 const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
   return (
@@ -60,7 +60,7 @@ const Blog = ({ posts }: { posts: BlogPostsListItem[] }) => {
           <a>JSON</a>
         </Link>
       </p>
-      <HRWithBottomMargin />
+      <hr className={s.hrWithMargin} />
       <BlogPosts posts={posts} />
     </PageSectionContainer>
   );
@@ -82,10 +82,5 @@ export async function getStaticProps() {
     },
   };
 }
-
-const HRWithBottomMargin = styled.hr`
-  margin-top: 24px;
-  margin-bottom: 24px;
-`;
 
 export default Blog;

@@ -1,0 +1,49 @@
+.containerOuter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.containerInner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+  padding: 32px 16px 16px 16px;
+  padding-bottom: 64px;
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+.spacedFlexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.helloText {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.navLink {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  text-transform: uppercase;
+}

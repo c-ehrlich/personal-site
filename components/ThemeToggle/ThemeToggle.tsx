@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import useStore, { Theme } from '../lib/store';
+import { useEffect, useState } from 'react';
+import useStore, { Theme } from '../../lib/store';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 

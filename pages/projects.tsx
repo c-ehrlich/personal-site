@@ -1,10 +1,11 @@
-import PageSectionContainer from '../components/PageSectionContainer';
-import Projects from '../components/Projects';
-import DemoProjects from '../components/DemoProjects';
+import PageSectionContainer from '../components/PageSectionContainer/PageSectionContainer';
+import Projects from '../components/Projects/Projects';
+import DemoProjects from '../components/DemoProjects/DemoProjects';
 import { getAllPostsWithFrontMatter } from '../lib/blogUtils';
 import { BlogPostsListItem } from '../types';
 import Link from 'next/link';
 import Head from 'next/head';
+import s from '../styles/Projects.module.css';
 
 interface Props {
   projects: BlogPostsListItem[];
@@ -28,7 +29,7 @@ const projects = (props: Props) => {
         allow them a second to spin up 😃
       </p>
       <Projects projects={props.projects} />
-      <h1 style={{ marginTop: '64px' }}>
+      <h1 className={s.h1mt64}>
         🤝 I have also made significant OSS contributions, including to:
       </h1>
       <ul>
@@ -41,9 +42,7 @@ const projects = (props: Props) => {
           <Link href='https://github.com/freeCodeCamp'>freeCodeCamp</Link>
         </li>
       </ul>
-      <h1 style={{ marginTop: '64px' }}>
-        ⚙️ ...and here are some bits and bobs.
-      </h1>
+      <h1 className={s.h1mt64}>⚙️ ...and here are some bits and bobs.</h1>
       <p>
         I&apos;m always interested in trying new technologies and expanding my
         understanding of the ones I am already using. These aren&apos;t quite

@@ -1,0 +1,83 @@
+.projectList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 64px;
+}
+
+.projectGridItem {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-column-gap: 32px;
+  grid-template-areas:
+    'image text'
+    '.     text';
+}
+
+@media (max-width: 800px) {
+  .projectGridItem {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'image'
+      'text';
+    grid-row-gap: 16px;
+  }
+}
+
+.projectImageContainer {
+  width: 100%;
+  position: relative;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 1px 15px -2px rgba(0, 0, 0, 0.2);
+}
+
+.projectImage {
+  border-radius: 8px;
+}
+
+.projectText {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projectTitle {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  font-size: 44px;
+  margin: -15px 0 0 -1px;
+}
+
+.projectDate {
+  margin-top: -14px;
+  margin-bottom: 0;
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+}
+
+.projectTechnologies {
+  margin: 0;
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  text-transform: 'capitalize';
+}
+
+.projectDescription {
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+.projectLinks {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+  font-weight: 700;
+}

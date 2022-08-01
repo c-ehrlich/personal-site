@@ -4,11 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-import BlogLayout from '../../components/BlogLayout';
+import BlogLayout from '../../components/BlogLayout/BlogLayout';
 import { BlogPostProps } from '../../types';
 import { getFiles, getPostBySlug } from '../../lib/blogUtils';
 import Link from 'next/link';
-import PageSectionContainer from '../../components/PageSectionContainer';
+import PageSectionContainer from '../../components/PageSectionContainer/PageSectionContainer';
 import Head from 'next/head';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 

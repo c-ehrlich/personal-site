@@ -6,11 +6,7 @@ const variants = {
   enter: { opacity: 1, x: 0, y: 0 },
 };
 
-const PageSectionContainer = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+const PageSectionContainer = ({ children }: { children: ReactNode }) => {
   return (
     <motion.main
       initial='hidden'

@@ -1,6 +1,6 @@
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import BlogPosts from '../../../components/BlogPosts';
-import PageSectionContainer from '../../../components/PageSectionContainer';
+import BlogPosts from '../../../components/BlogPosts/BlogPosts';
+import PageSectionContainer from '../../../components/PageSectionContainer/PageSectionContainer';
 import {
   getAllPostsWithFrontMatter,
   getAllPostsWithTag,

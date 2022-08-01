@@ -28,9 +28,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   a:visited {
     color: ${({ theme }) => theme.link};
   }
-  .bgglow {
-    transition: background-color 0.2s;
-  }
+  
   .bgglow:hover {
     background-color: ${({ theme }) => theme.linkBg};
   }

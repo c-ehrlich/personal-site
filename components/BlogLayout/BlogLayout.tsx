@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
-import { getFullDate } from '../lib/utils';
-import { BlogFrontMatter } from '../types';
-import BlogTags from './BlogTags';
+import { getFullDate } from '../../lib/utils';
+import { BlogFrontMatter } from '../../types';
+import BlogTags from '../BlogTags/BlogTags';
+import s from './BlogLayout.module.css';
 
 const BlogLayout = ({
   frontMatter,
@@ -13,16 +13,12 @@ const BlogLayout = ({
 }) => {
   return (
     <>
-      <BlogTitle>{frontMatter.title}</BlogTitle>
+      <h1 className={s.blogTitle}>{frontMatter.title}</h1>
       <BlogTags tags={frontMatter.tags} resource='blog' />
       <div>{getFullDate(frontMatter.publishedDate)}</div>
       {children}
     </>
   );
 };
-
-const BlogTitle = styled.h1`
-  margin-top: 8px;
-`;
 
 export default BlogLayout;

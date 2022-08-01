@@ -1,0 +1,17 @@
+.blogPostList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blogTitle {
+  margin: 0;
+  font-weight: 600 !important;
+  font-size: 22px;
+}
+
+.blogDate {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 12pt;
+}

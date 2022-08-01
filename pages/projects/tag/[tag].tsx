@@ -1,6 +1,6 @@
-import PageSectionContainer from '../../../components/PageSectionContainer';
-import DemoProjects from '../../../components/DemoProjects';
-import Projects from '../../../components/Projects';
+import PageSectionContainer from '../../../components/PageSectionContainer/PageSectionContainer';
+import DemoProjects from '../../../components/DemoProjects/DemoProjects';
+import Projects from '../../../components/Projects/Projects';
 import {
   getAllPostsWithFrontMatter,
   getAllPostsWithTag,

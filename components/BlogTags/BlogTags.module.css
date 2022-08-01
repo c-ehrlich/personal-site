@@ -1,0 +1,21 @@
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 8px;
+}
+
+.innerLink {
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 0px 4px;
+  font-size: 11px;
+  font-family: 'Quicksand';
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.innerLink:hover {
+  text-decoration: none;
+  /* TODO get bg-color from theme */
+}
