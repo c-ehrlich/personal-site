@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <HeadComponent />
       <div className={s.theme}>
         <div
-          className={`${s.containerOuter} ${theme === Theme.dark && 'dark'}`}
+          className={`${s.containerOuter}${
+            theme === Theme.dark ? ' dark' : ''
+          }`}
         >
           <div className={s.containerInner}>
             <div>

@@ -17,5 +17,5 @@
 
 .innerLink:hover {
   text-decoration: none;
-  /* TODO get bg-color from theme */
+  background-color: var(--color-link-bg);
 }

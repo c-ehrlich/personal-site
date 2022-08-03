@@ -9,3 +9,37 @@ body {
   line-height: 1.4;
   transition: all 0.2s linear;
 }
+
+body {
+  box-sizing: border-box;
+
+  --color-text: hsl(12, 5%, 4%);
+  --color-link: rgb(162, 84, 60);
+  --color-link-bg: rgba(162, 84, 60, 0.2);
+  --color-background: hsl(26, 50%, 95%);
+}
+
+body .dark {
+  --color-text: rgb(229, 231, 235);
+  --color-link: rgb(100, 202, 202);
+  --color-link-bg: rgba(100, 202, 202, 0.4);
+  --color-background: rgb(16, 12, 8);
+}
+
+h1 {
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none !important;
+  border-color: var(--color-link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-link);
+}
