@@ -1,8 +1,48 @@
+.theme {
+  --color-text: hsl(12, 5%, 4%);
+  --color-link: rgb(162, 84, 60);
+  --color-link-bg: rgba(162, 84, 60, 0.2);
+  --color-background: hsl(26, 50%, 95%);
+}
+
+.theme .dark {
+  --color-text: rgb(229, 231, 235);
+  --color-link: rgb(100, 202, 202);
+  --color-link-bg: rgba(100, 202, 202, 0.4);
+  --color-background: rgb(16, 12, 8);
+}
+
+.theme a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-color: var(--color-link);
+}
+.theme a:hover {
+  text-decoration: underline;
+}
+.theme a:visited {
+  color: var(--color-link);
+}
+
+.bgglow:hover {
+  background-color: var(--color-link-bg);
+}
+
+.theme h1 {
+  font-weight: 500;
+}
+
+.theme * {
+  box-sizing: border-box;
+}
+
 .containerOuter {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .containerInner {
