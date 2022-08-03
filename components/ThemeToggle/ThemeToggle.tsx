@@ -1,29 +1,13 @@
 import { useEffect, useState } from 'react';
 import useStore, { Theme } from '../../lib/store';
-import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
-
-const ThemeButton = styled(motion.button)`
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  font-size: 40px;
-  text-align: right;
-  height: 100%;
-  padding-right: 0;
-
-  // prevent selecting
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-`;
+import s from './ThemeToggle.module.css';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useStore();
 
   const [hasMounted, setHasMounted] = useState<boolean>(false);
+
   useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -34,7 +18,8 @@ const ThemeToggle = () => {
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
-      <ThemeButton
+      <motion.button
+        className={s.themeButton}
         onClick={() => toggleTheme()}
         key={theme === Theme.light ? 'light-icon' : 'dark-icon'}
         initial={{ y: -20, opacity: 0 }}
@@ -43,7 +28,7 @@ const ThemeToggle = () => {
         transition={{ duration: 0.2 }}
       >
         {theme === Theme.light ? '🌤️' : '🌙'}
-      </ThemeButton>
+      </motion.button>
     </AnimatePresence>
   );
 };

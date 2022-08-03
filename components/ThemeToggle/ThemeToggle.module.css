@@ -1,0 +1,16 @@
+.themeButton {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  text-align: right;
+  height: 100%;
+  padding-right: 0;
+
+  /* Prevent selecting */
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
