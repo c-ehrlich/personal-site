@@ -4,9 +4,11 @@ import matter from 'gray-matter';
 import { Feed } from 'feed';
 import { RSSBlogPost } from '../types';
 import { marked } from 'marked';
-import hljs from 'highlight.js';
+
 const prism = require('prismjs');
 const loadLanguages = require('prismjs/components/');
+
+import rssFavicon from '../public/favicon.ico';
 
 // https://sreetamdas.com/blog/rss-for-nextjs
 
@@ -51,9 +53,8 @@ export async function generateRssFeed() {
       'Thoughts about Programming, Education, Design, and other things',
     id: `${publishRoot}/blog`,
     link: `${publishRoot}/blog`,
-    // TODO: Add image and favicon
-    image: undefined,
-    favicon: undefined,
+    image: '/android-chrome-192x192.png',
+    favicon: '/favicon.ico',
     copyright: `All rights reserved ${date.getFullYear()}, Christopher Ehrlich`,
     updated: date,
     generator: 'Feed for Node.js',
