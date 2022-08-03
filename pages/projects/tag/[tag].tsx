@@ -6,18 +6,14 @@ import {
   getAllPostsWithTag,
 } from '../../../lib/blogUtils';
 import { BlogPostsListItem } from '../../../types';
-import styled from 'styled-components';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import s from '../../../styles/Projects.module.css';
 
 interface Props {
   projects: BlogPostsListItem[];
   demoProjects: BlogPostsListItem[];
   tag: string;
 }
-
-const H2WithBigTopMargin = styled.h2`
-  margin-top: 64px;
-`;
 
 const TaggedProjectsList = (props: Props) => {
   return (
@@ -32,9 +28,9 @@ const TaggedProjectsList = (props: Props) => {
       )}
       {props.demoProjects && props.demoProjects.length > 0 && (
         <>
-          <H2WithBigTopMargin>
+          <h2 className={s.h1mt64}>
             Bits and bobs tagged with &quot;{props.tag}&quot;
-          </H2WithBigTopMargin>
+          </h2>
           <DemoProjects demoProjects={props.demoProjects} />
         </>
       )}
