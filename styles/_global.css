@@ -6,7 +6,7 @@ body {
     sans-serif;
   font-size: 20px;
   line-height: 1.4;
-  transition: all 0.2s linear;
+  transition: all 0.2s linear !important;
 
   box-sizing: border-box;
 
