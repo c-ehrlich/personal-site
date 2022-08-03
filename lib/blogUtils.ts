@@ -6,7 +6,7 @@ import { BlogPostsListItem } from '../types';
 const root = process.cwd();
 
 export function getFiles(dataType: string) {
-  return fs.readdirSync(path.join(root, 'data', dataType), 'utf8'); // TODO is it utf-8?
+  return fs.readdirSync(path.join(root, 'data', dataType), 'utf8');
 }
 
 export function getPostBySlug(dataType: string, slug: string) {

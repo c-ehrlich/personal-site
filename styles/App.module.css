@@ -34,7 +34,6 @@
 
 .helloText {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  /* TODO figure out why !important is needed here */
   font-weight: 700;
 }
 

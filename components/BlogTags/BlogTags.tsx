@@ -1,22 +1,19 @@
 import Link from 'next/link';
 import s from './BlogTags.module.css';
 
-const BlogTags = ({
-  tags,
-  resource,
-  hashtag = false,
-}: {
+interface BlogTagsProps {
   tags: string[];
   resource: string;
   hashtag?: boolean;
-}) => {
+}
+
+const BlogTags = ({ tags, resource, hashtag = false }: BlogTagsProps) => {
   return (
     <div className={s.tags}>
       {tags
         .map<React.ReactNode>((tag) => (
           <Link key={tag} href={`/${resource}/tag/${tag}`} passHref>
-            {/* TODO we currently need bgglow because of globalstyles/theme */}
-            <a className={`${s.innerLink} bgglow`}>{`${
+            <a className={s.innerLink}>{`${
               hashtag === true ? '#' : ''
             }${tag}`}</a>
           </Link>
