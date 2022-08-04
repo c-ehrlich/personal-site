@@ -11,6 +11,7 @@ TLDR:
 1. Use open source projects
 2. Find issues
 3. Fix them
+
 There's a bit more to it than that, but that's the basic idea.
 
 ## Background
