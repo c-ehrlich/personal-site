@@ -1,5 +1,5 @@
 ---
-title: How Start Contributing to Open Source
+title: How To Start Contributing to Open Source
 description: My journey to my first Open Source commits
 publishedDate: 2022/05/25
 tags:
