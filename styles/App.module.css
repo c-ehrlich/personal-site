@@ -12,7 +12,6 @@
 .containerInner {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: space-between;
   width: 100%;
   max-width: 960px;
