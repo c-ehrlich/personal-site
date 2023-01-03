@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FC } from 'react';
-import { getMonthYearDate } from '../../lib/utils';
-import { BlogPostsListItem } from '../../types';
-import BlogTags from '../BlogTags/BlogTags';
-import s from './Projects.module.css';
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
+import { getMonthYearDate } from "../../lib/utils";
+import { BlogPostsListItem } from "../../types";
+import BlogTags from "../BlogTags/BlogTags";
+import s from "./Projects.module.css";
 
 type Props = {
   projects: BlogPostsListItem[];
@@ -20,10 +20,8 @@ const Projects: FC<Props> = ({ projects }) => {
               className={s.projectImage}
               src={`${project.frontMatter.image}`}
               alt={`${project.frontMatter.title} thumbnail`}
-              layout='responsive'
-              width='1000'
-              height='1000'
-              // placeholder='blur'
+              width="1000"
+              height="1000"
             />
           </div>
           <div className={s.projectText}>
@@ -32,26 +30,24 @@ const Projects: FC<Props> = ({ projects }) => {
               {getMonthYearDate(project.frontMatter.publishedDate)}
             </p>
             <div className={s.projectTechnologies}>
-              <BlogTags tags={project.frontMatter.tags} resource='projects' />
+              <BlogTags
+                tags={project.frontMatter.tags}
+                resource="projects"
+                href={false}
+              />
             </div>
             <p className={s.projectDescription}>
               {project.frontMatter.description}
             </p>
             <div className={s.projectLinks}>
               {project.frontMatter.github && (
-                <Link href={project.frontMatter.github}>
-                  <a>GitHub</a>
-                </Link>
+                <Link href={project.frontMatter.github}>GitHub</Link>
               )}
               {project.frontMatter.deployed && (
-                <Link href={project.frontMatter.deployed}>
-                  <a>Live Demo</a>
-                </Link>
+                <Link href={project.frontMatter.deployed}>Live Demo</Link>
               )}
               {project.frontMatter.video && (
-                <Link href={project.frontMatter.video}>
-                  <a>Demo Video</a>
-                </Link>
+                <Link href={project.frontMatter.video}>Demo Video</Link>
               )}
             </div>
           </div>

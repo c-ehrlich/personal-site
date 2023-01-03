@@ -1,16 +1,16 @@
 // TODO figure out how to run this without disabling this eslint rule
 /* eslint-disable react/no-children-prop */
-import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-import BlogLayout from '../../components/BlogLayout/BlogLayout';
-import { BlogPostProps } from '../../types';
-import { getFiles, getPostBySlug } from '../../lib/blogUtils';
-import Link from 'next/link';
-import PageSectionContainer from '../../components/PageSectionContainer/PageSectionContainer';
-import Head from 'next/head';
-import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import BlogLayout from "../../components/BlogLayout/BlogLayout";
+import { BlogPostProps } from "../../types";
+import { getFiles, getPostBySlug } from "../../lib/blogUtils";
+import Link from "next/link";
+import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
+import Head from "next/head";
+import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
 const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
   if (!frontMatter) return <></>;
@@ -20,23 +20,23 @@ const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
       <Head>
         <title>{frontMatter.title} - Christopher Ehrlich</title>
         <meta
-          name='description'
+          name="description"
           content={`Christopher Ehrlich Developer Portfolio - ${frontMatter.title}`}
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <BlogLayout frontMatter={frontMatter}>
         <ReactMarkdown
           children={markdownBody}
           components={{
             code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
+              const match = /language-(\w+)/.exec(className || "");
               return !inline && match ? (
                 <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, '')}
+                  children={String(children).replace(/\n$/, "")}
                   style={vscDarkPlus}
                   language={match[1]}
-                  PreTag='div'
+                  PreTag="div"
                   {...props}
                 />
               ) : (
@@ -51,25 +51,11 @@ const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
       <hr />
       <p>
         If you spot an error, or have any comments, suggestions or questions
-        about this article, please{' '}
-        <Link href='/contact'>
-          <a>contact me</a>
-        </Link>
-        . I‘d love to hear from you.
+        about this article, please <Link href="/contact">contact me</Link>. I‘d
+        love to hear from you.
       </p>
       <p>
-        📡 Feed:{' '}
-        <Link href='/rss/feed.xml'>
-          <a>RSS</a>
-        </Link>
-        ,{' '}
-        <Link href='/rss/atom.xml'>
-          <a>ATOM</a>
-        </Link>
-        ,{' '}
-        <Link href='/rss/feed.json'>
-          <a>JSON</a>
-        </Link>
+        <Link href="/rss/feed.xml">📡 RSS Feed</Link>
       </p>
     </PageSectionContainer>
   );
@@ -77,8 +63,8 @@ const BlogPost = ({ frontMatter, markdownBody }: BlogPostProps) => {
 
 export async function getStaticProps({ params }: Params) {
   const { frontMatter, markdownBody } = await getPostBySlug(
-    'blog',
-    params.slug
+    "blog",
+    params.slug,
   );
 
   return {
@@ -90,11 +76,11 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('blog');
+  const posts = await getFiles("blog");
 
   const paths = posts.map((filename: string) => ({
     params: {
-      slug: filename.replace(/\.md/, ''),
+      slug: filename.replace(/\.md/, ""),
     },
   }));
 

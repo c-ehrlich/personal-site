@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { BlogPostsListItem } from '../../types';
-import BlogTags from '../BlogTags/BlogTags';
-import { getFullDate } from '../../lib/utils';
-import s from './BlogPosts.module.css';
+import Link from "next/link";
+import { BlogPostsListItem } from "../../types";
+import BlogTags from "../BlogTags/BlogTags";
+import { getFullDate } from "../../lib/utils";
+import s from "./BlogPosts.module.css";
 
 type Props = {
   posts: BlogPostsListItem[];
@@ -15,10 +15,10 @@ const BlogPosts = (props: Props) => {
       {props.posts &&
         props.posts.map((post) => {
           return (
-            <article key={post.slug} className='post-title'>
+            <article key={post.slug} className="post-title">
               <h3 className={s.blogTitle}>
                 <Link href={{ pathname: `/blog/${post.slug}` }}>
-                  <a>{post.frontMatter.title}</a>
+                  {post.frontMatter.title}
                 </Link>
               </h3>
               <p className={s.blogDate}>
@@ -27,7 +27,7 @@ const BlogPosts = (props: Props) => {
               <BlogTags
                 hashtag={true}
                 tags={post.frontMatter.tags}
-                resource='blog'
+                resource="blog"
               />
             </article>
           );

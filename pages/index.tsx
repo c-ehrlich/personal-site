@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageSectionContainer from '../components/PageSectionContainer/PageSectionContainer';
-import { generateRssFeed } from '../lib/rssUtils';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
+import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
+import { generateRssFeed } from "../lib/rssUtils";
 
 const Home: NextPage = () => {
   return (
@@ -10,21 +10,18 @@ const Home: NextPage = () => {
       <Head>
         <title>Christopher Ehrlich</title>
         <meta
-          name='description'
-          content='Christopher Ehrlich Developer Portfolio'
+          name="description"
+          content="Christopher Ehrlich Developer Portfolio"
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>A quick intro</h1>
       <p>
-        After Graduating from Central St Martins I worked for designers such as{' '}
-        <Link href='https://aitorthroup.com/'>
-          <a>Aitor Throup</a>
-        </Link>{' '}
-        and{' '}
-        <Link href='https://www.janjanvanessche.com/'>Jan-Jan van Essche</Link>,
-        and then became a lecturer at the{' '}
-        <Link href='https://www.ufg.at/'>
+        After Graduating from Central St Martins I worked for designers such as{" "}
+        <Link href="https://aitorthroup.com/">Aitor Throup</Link> and{" "}
+        <Link href="https://www.janjanvanessche.com/">Jan-Jan van Essche</Link>,
+        and then became a lecturer at the{" "}
+        <Link href="https://www.ufg.at/">
           University of Art and Design in Linz
         </Link>
         .
@@ -34,8 +31,8 @@ const Home: NextPage = () => {
         programming, and started teaching myself Full Stack development.
       </p>
       <p>
-        I currently work for <Link href='https://www.kompany.at'>kompany</Link>,
-        a subsidiary of <Link href='https://www.moodys.com/'>Moody&apos;s</Link>
+        I currently work for <Link href="https://www.kompany.at">kompany</Link>,
+        a subsidiary of <Link href="https://www.moodys.com/">Moody&apos;s</Link>
         .
       </p>
       <p>
