@@ -8,14 +8,6 @@ import HeadComponent from '../components/HeadComponent/HeadComponent';
 import s from '../styles/App.module.css';
 import '../styles/_global.css';
 
-import '@fontsource/roboto-condensed/300.css';
-import '@fontsource/roboto-condensed/400.css';
-import '@fontsource/roboto-condensed/700.css';
-import '@fontsource/raleway/400.css';
-import '@fontsource/raleway/500.css';
-import '@fontsource/raleway/600.css';
-import '@fontsource/quicksand/700.css';
-
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useStore();
 

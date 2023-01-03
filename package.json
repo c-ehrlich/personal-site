@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fontsource/quicksand": "^4.5.4",
-    "@fontsource/raleway": "^4.5.3",
-    "@fontsource/roboto-condensed": "^4.5.3",
     "feed": "^4.2.2",
     "framer-motion": "^6.2.8",
     "gray-matter": "^4.0.3",

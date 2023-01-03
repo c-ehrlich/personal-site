@@ -10,7 +10,7 @@
   border-radius: 3px;
   padding: 0px 4px;
   font-size: 11px;
-  font-family: 'Quicksand';
+  font-weight: semibold;
   text-transform: uppercase;
   transition: background-color 0.2s;
 }
