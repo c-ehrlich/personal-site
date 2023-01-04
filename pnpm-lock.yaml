@@ -20,7 +20,6 @@ specifiers:
   react-markdown: ^8.0.0
   react-syntax-highlighter: ^15.4.5
   typescript: ^4.9.4
-  zustand: ^3.7.1
 
 dependencies:
   feed: 4.2.2
@@ -34,7 +33,6 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-markdown: 8.0.4_kzbn2opkn2327fwg5yzwzya5o4
   react-syntax-highlighter: 15.5.0_react@18.2.0
-  zustand: 3.7.2_react@18.2.0
 
 devDependencies:
   '@types/marked': 4.0.8
@@ -2763,15 +2761,3 @@ packages:
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
-
-  /zustand/3.7.2_react@18.2.0:
-    resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      react: '>=16.8'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: 18.2.0
-    dev: false
